@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Lexend Deca', Roboto, Helvetica, Arial, sans-serif;
     overflow-x: hidden;
     position: relative;
     background: #0c0a0e;
@@ -55,12 +55,29 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 120px 40px;
+    /* Alterado para alinhar o conteúdo à esquerda */
+    justify-content: flex-start;
+    padding: 120px 8%;
+    /* Usando porcentagem para melhor responsividade */
 }
 
 #home {
-    background: radial-gradient(ellipse at center, #160f1d 0%, #0c0a0e 100%);
+    background: url('images/background.jpg') no-repeat center center/cover;
+    position: relative;
+    z-index: 1;
+}
+
+/* Nova sobreposição em gradiente */
+#home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Gradiente da esquerda (escuro) para a direita (transparente) */
+    background: linear-gradient(to right, rgba(12, 10, 14, 0.95) 30%, rgba(12, 10, 14, 0.4) 60%, transparent);
+    z-index: -1;
 }
 
 #about,
@@ -161,24 +178,35 @@ body {
 
 /* Seção Hero */
 .hero-content {
-    text-align: center;
+    /* Alinha texto e itens à esquerda */
+    text-align: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 25px;
     padding: 20px;
+    /* Limita a largura do conteúdo de texto */
 }
 
 .hero-content h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    max-width: 800px;
-    line-height: 1.2;
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
+    /* Título maior */
+    line-height: 1.1;
     font-weight: 700;
-    background: linear-gradient(135deg, #ffffff 0%, #b391d4 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    /* Mais pesado para mais impacto */
+    color: #fff;
+    /* Cor base branca */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    /* Remove o estilo antigo de gradiente no texto */
+    background: none;
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+}
+
+/* Estiliza a parte do título dentro do <span> */
+.hero-content h1 span {
+    color: #a855f7;
+    /* Cor roxa do seu tema */
 }
 
 .hero-content p {
@@ -191,20 +219,63 @@ body {
 .hero-cta {
     display: inline-flex;
     align-items: center;
-    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
+    justify-content: center;
+    /* Garante alinhamento perfeito */
+
+    /* 1. COR: Trocamos o gradiente por um vermelho sólido */
+    background: #a855f7;
+    /* Um vermelho vibrante, similar ao da imagem */
     color: white;
+
+    font-family: 'Montserrat', sans-serif;
+    /* Usando a fonte que identificamos antes */
+    font-weight: 700;
+    /* Um pouco mais de peso */
+    font-size: 14px;
+    /* Tamanho da fonte ajustado */
     text-decoration: none;
-    padding: 12px 30px;
-    border-radius: 50px;
-    font-weight: 600;
+    text-transform: uppercase;
+    /* Garante que o texto fique em maiúsculo */
+    letter-spacing: 1.5px;
+    /* Adiciona um respiro entre as letras */
+
+    padding: 16px 30px;
     margin-top: 20px;
+
+    /* 2. FORMA: O segredo está aqui! */
+    /* Define os raios na ordem: topo-esquerdo, topo-direito, baixo-direito, baixo-esquerdo */
+    border-radius: 8px 30px 30px 8px;
+
+    /* 3. SOMBRA: Sombra mais sutil e avermelhada */
+
     transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(168, 85, 247, 0.3);
+    position: relative;
+    /* Necessário para a animação da seta */
+}
+
+.hero-cta::after {
+    content: '→';
+    /* O caractere da seta */
+    font-size: 20px;
+    /* Tamanho da seta */
+    margin-left: 12px;
+    /* Espaço entre o texto e a seta */
+    transition: transform 0.3s ease;
+    /* Animação suave para a seta */
 }
 
 .hero-cta:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.5);
+    transform: translateY(-3px);
+    /* Leve movimento para cima */
+    filter: brightness(1.1);
+    /* Deixa o botão um pouco mais brilhante */
+    /* Sombra mais forte */
+}
+
+/* Animação da seta no hover */
+.hero-cta:hover::after {
+    transform: translateX(5px);
+    /* Move a seta para a direita */
 }
 
 /* Seção de Produtos */
