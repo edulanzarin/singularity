@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Singularity - Produtos Digitais</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header" id="header">
+        <a href="#home" class="logo-container">
+            <div class="logo">
+                <img src="images/icon.png" alt="Logo" width="100%">
+            </div>
+            <div class="logo-text">Singularity</div>
+        </a>
+
+        <nav class="main-menu" id="mainMenu">
+            <a href="#home" class="menu-item active">Início</a>
+            <a href="#products" class="menu-item">Produtos</a>
+            <a href="#about" class="menu-item">Sobre</a>
+            <a href="https://discord.gg/seuservidor" target="_blank" rel="noopener noreferrer"
+                class="menu-item external">Discord</a>
+        </nav>
+
+        <div class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section id="home" class="section">
+        <div class="hero-content">
+            <h1>Soluções Digitais de Alta Performance</h1>
+            <p>Eleve sua experiência com ferramentas seguras, otimizadas e com entrega instantânea.</p>
+            <a href="#products" class="hero-cta">Ver Produtos</a>
+        </div>
+    </section>
+
+    <section id="products" class="section">
+        <div class="products-wrapper">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <div class="coverflow-container" tabindex="0">
+                <div class="coverflow" id="coverflow">
+                    <div class="coverflow-item" data-index="0">
+                        <div class="cover image-loading">
+                            <img src="images/spoofer.jpg" alt="Spoofer" loading="lazy">
+                            <div class="card-info">
+                                <h3>Spoofer</h3>
+                                <p class="card-cta">Ver detalhes →</p>
+                            </div>
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+
+                    <div class="coverflow-item" data-index="1">
+                        <div class="cover image-loading">
+                            <img src="images/league-of-legends.jpg" alt="League of Legends" loading="lazy">
+                            <div class="card-info">
+                                <h3>League of Legends</h3>
+                                <p class="card-cta">Ver detalhes →</p>
+                            </div>
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+
+                    <div class="coverflow-item" data-index="2">
+                        <div class="cover image-loading">
+                            <img src="images/valorant.png" alt="Valorant" loading="lazy">
+                            <div class="card-info">
+                                <h3>Valorant</h3>
+                                <p class="card-cta">Ver detalhes →</p>
+                            </div>
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+
+                    <div class="coverflow-item" data-index="3">
+                        <div class="cover image-loading">
+                            <img src="images/contas-lol.jpg" alt="Contas LoL" loading="lazy">
+                            <div class="card-info">
+                                <h3>Conta League of Legends</h3>
+                                <p class="card-cta">Ver detalhes →</p>
+                            </div>
+                        </div>
+                        <div class="reflection"></div>
+                    </div>
+                </div>
+
+                <button class="nav-button prev" onclick="navigate(-1)">‹</button>
+                <button class="nav-button next" onclick="navigate(1)">›</button>
+
+                <div class="dots-container" id="dots"></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="about-content">
+            <div class="about-header">
+                <h2 class="section-title">Conheça a Singularity</h2>
+                <p>A vanguarda em soluções digitais para otimizar sua performance e garantir sua segurança.</p>
+            </div>
+
+            <div class="about-main">
+                <div class="about-visual">
+                    <div class="showcase-main">
+                        <div class="showcase-logo">
+                            <img src="images/icon.png" alt="Logo" width="100%">
+                        </div>
+                        <h3 class="showcase-title">Singularity</h3>
+                        <p class="showcase-subtitle">Sua fonte confiável para scripts e ferramentas digitais de ponta.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="about-info">
+                    <h3>Eleve sua Experiência Digital</h3>
+                    <p>Na Singularity, nos dedicamos a fornecer as melhores ferramentas do mercado. Nossos produtos são
+                        desenvolvidos com foco em performance, estabilidade e segurança, garantindo que você tenha a
+                        melhor experiência possível.</p>
+                    <ul class="feature-list">
+                        <li>Entrega Imediata e Automática</li>
+                        <li>Suporte Dedicado via Discord</li>
+                        <li>Atualizações Constantes</li>
+                        <li>Segurança e Privacidade Garantidas</li>
+                        <li>Compatibilidade Ampla</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="stats-section">
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Entrega Automática</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Satisfação</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">✔️</div>
+                    <div class="stat-label">Seguro</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">⚡</div>
+                    <div class="stat-label">Alta Performance</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="footer">
+    </footer>
+
+    <div class="scroll-to-top" id="scrollToTop">
+        <span>↑</span>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
