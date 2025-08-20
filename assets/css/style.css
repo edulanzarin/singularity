@@ -560,3 +560,34 @@ body {
         padding-left: 0;
     }
 }
+
+/* 10. ANIMAÇÕES GLOBAIS DE SURGIMENTO */
+
+/* Define a animação 'fade-up' */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe inicial para os elementos que vão ser animados.
+  Eles começam invisíveis e fora da posição final.
+*/
+.fade-up-element {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe que será adicionada pelo JavaScript quando o elemento
+  estiver visível na tela, ativando a animação.
+*/
+.fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

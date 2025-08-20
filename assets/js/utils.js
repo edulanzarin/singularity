@@ -56,4 +56,25 @@ document.addEventListener('DOMContentLoaded', () => {
         // Se não houver botão, apenas o header precisa do scroll
         window.addEventListener('scroll', handleHeaderScroll);
     }
+
+    // --- LÓGICA PARA ANIMAÇÃO DE SURGIMENTO ---
+    const animatedElements = document.querySelectorAll('.fade-up-element');
+
+    if (animatedElements.length > 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Opcional: para a observação depois que a animação ocorre uma vez
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // A animação começa quando 10% do elemento está visível
+        });
+
+        animatedElements.forEach(element => {
+            observer.observe(element);
+        });
+    }
 });

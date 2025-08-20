@@ -1,5 +1,3 @@
-// assets/js/checkout.js - VERSÃO DINÂMICA E FLEXÍVEL
-
 document.addEventListener('DOMContentLoaded', () => {
     // Banco de dados simulado com informações dos produtos
     const productData = {
