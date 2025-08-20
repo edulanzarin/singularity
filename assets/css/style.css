@@ -1,24 +1,40 @@
 /* Importa a fonte Montserrat */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap');
 
-/* 1. ESTILOS GLOBAIS E NOVA PALETA DE COR ROXA */
+/* 1. ESTILOS GLOBAIS E NOVA PALETA DE COR (INFERNO ESCARLATE) */
 :root {
-    --bg-dark: #0F0F1B;
-    --bg-light: #1A1A2E;
-    --accent-purple: #8B5CF6;
-    /* Roxo principal */
-    --accent-violet: #6D28D9;
-    /* Roxo mais escuro */
+    /* Cores de Fundo e Texto */
+    --bg-dark: #120D0B;
+    /* Um preto com fundo avermelhado, como rocha vulcânica */
+    --bg-light: #2A1F1D;
+    /* Um cinza-escuro quente */
     --text-primary: #FFFFFF;
-    --text-secondary: #A0AEC0;
+    --text-secondary: #D1C7C2;
+    /* Um cinza claro levemente aquecido */
     --border-color: rgba(255, 255, 255, 0.1);
+
+    /* Cores de Destaque (Acentos) */
+    --accent-1: #D90429;
+    /* Vermelho escarlate, o foco principal */
+    --accent-2: #FF4800;
+    /* Laranja vibrante, para gradientes e detalhes */
+    --accent-bright: #F77F00;
+    /* Laranja-amarelado, para pontos de maior brilho */
+
+    /* Cores para Efeitos (ex: sombras) */
+    --accent-1-rgb: 217, 4, 41;
+    /* Componentes RGB do --accent-1 para usar com 'rgba' */
+
+    /* Cores de Terceiros (Branding) */
+    --discord-blue: #5865F2;
+    --discord-blue-hover: #4f5bda;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    cursor: url('images/cursor.png') 0 0, auto;
+    cursor: url('../images/cursor.png') 0 0, auto;
 }
 
 html {
@@ -37,7 +53,7 @@ body {
     user-select: none;
 }
 
-/* Scrollbar Customizada com tema roxo */
+/* Scrollbar Customizada com tema INFERNO ESCARLATE */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -47,12 +63,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-purple);
+    background: var(--accent-1);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--accent-violet);
+    background: var(--accent-2);
 }
 
 /* 2. ESTRUTURA E SEÇÕES PRINCIPAIS */
@@ -68,14 +84,14 @@ body {
 
 #home {
     justify-content: flex-start;
-    background: url('images/background.jpg') no-repeat center center/cover;
+    background: url('../images/background.jpg') no-repeat center center/cover;
 }
 
 #home::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(15, 15, 27, 0.95) 40%, rgba(15, 15, 27, 0.2) 70%, transparent);
+    background: linear-gradient(to right, rgba(18, 13, 11, 0.95) 40%, rgba(18, 13, 11, 0.2) 70%, transparent);
     z-index: 1;
 }
 
@@ -84,7 +100,7 @@ body {
     font-weight: 800;
     text-align: center;
     margin-bottom: 15px;
-    background: linear-gradient(90deg, var(--accent-purple), #c084fc);
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -106,7 +122,7 @@ body {
     left: 0;
     right: 0;
     height: 80px;
-    background: rgba(15, 15, 27, 0.5);
+    background: rgba(18, 13, 11, 0.5);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     z-index: 1000;
@@ -118,7 +134,7 @@ body {
 }
 
 .header.scrolled {
-    background: rgba(15, 15, 27, 0.8);
+    background: rgba(18, 13, 11, 0.8);
     height: 75px;
 }
 
@@ -157,7 +173,7 @@ body {
 .menu-item:hover,
 .menu-item.active {
     color: var(--text-primary);
-    text-shadow: 0 0 12px var(--accent-purple);
+    text-shadow: 0 0 12px var(--accent-1);
 }
 
 /* 4. SEÇÃO HERO */
@@ -180,7 +196,7 @@ body {
 }
 
 .hero-title span {
-    background: linear-gradient(90deg, var(--accent-purple), #c084fc);
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -195,7 +211,7 @@ body {
 
 .hero-cta {
     display: inline-block;
-    background: linear-gradient(90deg, var(--accent-purple), var(--accent-violet));
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     color: var(--text-primary);
     font-weight: 700;
     font-size: 16px;
@@ -206,12 +222,12 @@ body {
     margin-top: 20px;
     border-radius: 8px;
     transition: all 0.3s ease;
-    box-shadow: 0 0 25px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 25px rgba(var(--accent-1-rgb), 0.4);
 }
 
 .hero-cta:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 35px rgba(139, 92, 246, 0.7);
+    box-shadow: 0 0 35px rgba(var(--accent-1-rgb), 0.7);
     filter: brightness(1.1);
 }
 
@@ -242,7 +258,7 @@ body {
 
 .product-card:hover {
     transform: translateY(-10px);
-    border-color: var(--accent-purple);
+    border-color: var(--accent-1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -250,8 +266,8 @@ body {
     position: absolute;
     top: 15px;
     right: 15px;
-    background: linear-gradient(90deg, var(--accent-purple), var(--accent-violet));
-    color: white;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: var(--text-primary);
     padding: 5px 10px;
     border-radius: 5px;
     font-size: 0.8rem;
@@ -260,7 +276,7 @@ body {
 }
 
 .product-badge.new {
-    background: linear-gradient(90deg, #10b981, #059669);
+    background: linear-gradient(90deg, var(--accent-2), var(--accent-bright));
 }
 
 .product-image {
@@ -303,29 +319,24 @@ body {
 
 .product-footer-details {
     margin-top: auto;
-    /* Empurra o botão para o final do card */
     text-align: right;
-    /* Alinha o botão à direita */
 }
 
 .product-button-details {
     display: inline-block;
-    color: var(--accent-purple);
+    color: var(--accent-1);
     text-decoration: none;
     font-weight: 700;
     font-size: 0.9rem;
     padding: 8px 0;
-    /* Apenas espaçamento vertical */
     transition: all 0.3s ease;
     background: none;
     border: none;
 }
 
 .product-button-details:hover {
-    color: #c084fc;
-    /* Um tom de roxo mais claro para o hover */
+    color: var(--accent-2);
     letter-spacing: 0.5px;
-    /* Efeito sutil de espaçamento */
 }
 
 /* 6. SEÇÃO DE VANTAGENS */
@@ -352,14 +363,14 @@ body {
 
 .feature-card:hover {
     transform: translateY(-5px);
-    border-color: var(--accent-purple);
+    border-color: var(--accent-1);
 }
 
 .feature-icon {
     width: 60px;
     height: 60px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-violet));
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -369,7 +380,7 @@ body {
 .feature-icon svg {
     width: 32px;
     height: 32px;
-    color: white;
+    color: var(--text-primary);
 }
 
 .feature-title {
@@ -423,14 +434,13 @@ body {
 }
 
 .footer-links ul li a:hover {
-    color: var(--accent-purple);
+    color: var(--accent-1);
 }
 
 .footer-discord-button {
     display: inline-block;
-    background-color: #5865F2;
-    /* Cor oficial do Discord */
-    color: white;
+    background-color: var(--discord-blue);
+    color: var(--text-primary);
     padding: 12px 20px;
     border-radius: 8px;
     text-decoration: none;
@@ -439,7 +449,7 @@ body {
 }
 
 .footer-discord-button:hover {
-    background-color: #4f5bda;
+    background-color: var(--discord-blue-hover);
 }
 
 .footer-bottom {
@@ -457,12 +467,12 @@ body {
     right: 30px;
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--accent-purple), var(--accent-violet));
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--text-primary);
     font-size: 20px;
     opacity: 0;
     visibility: hidden;
@@ -479,7 +489,7 @@ body {
 
 .scroll-to-top:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(139, 92, 246, 0.5);
+    box-shadow: 0 10px 20px rgba(var(--accent-1-rgb), 0.5);
 }
 
 /* 9. MENU MOBILE E RESPONSIVIDADE */
@@ -502,7 +512,7 @@ body {
         top: 100%;
         left: 0;
         right: 0;
-        background: rgba(18, 16, 22, 0.98);
+        background: rgba(18, 13, 11, 0.98);
         backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 20px;
@@ -524,7 +534,7 @@ body {
     .menu-toggle span {
         width: 25px;
         height: 3px;
-        background: white;
+        background: var(--text-primary);
         margin: 3px 0;
         transition: 0.3s;
         border-radius: 2px;

@@ -1,8 +1,8 @@
-/* Estilos específicos para a página de produtos em grid */
+/* Estilos específicos para a página de produtos em grid com o tema "Horizonte Cibernético" */
 
 .product-page-body {
-    background: #0c0a0e;
-    color: white;
+    background: var(--bg-dark);
+    color: var(--text-primary);
 }
 
 .products-grid-container {
@@ -18,23 +18,24 @@
     gap: 10px;
     margin-bottom: 40px;
     font-size: 16px;
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
 }
 
 .breadcrumb a {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--text-secondary);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .breadcrumb a:hover {
-    color: #a855f7;
+    color: var(--accent-1);
+    /* Usa a cor de destaque do tema */
 }
 
 .breadcrumb h1 {
     font-size: 28px;
     font-weight: 700;
-    color: white;
+    color: var(--text-primary);
     margin: 0;
 }
 
@@ -45,10 +46,11 @@
 }
 
 .product-card {
-    background: #160f1d;
+    background: var(--bg-light);
+    /* Usa o fundo secundário do tema */
     border-radius: 12px;
     overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--border-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
@@ -56,13 +58,13 @@
 
 .product-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 10px 30px rgba(var(--accent-1-rgb), 0.2);
+    /* Usa a sombra com a cor do tema */
 }
 
 .card-image {
     width: 100%;
     aspect-ratio: 16 / 9;
-    /* Proporção da imagem */
     overflow: hidden;
 }
 
@@ -82,59 +84,63 @@
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    /* Faz o conteúdo crescer para preencher o espaço */
 }
 
 .product-title {
     font-size: 20px;
     font-weight: 600;
     margin: 0;
-    color: white;
+    color: var(--text-primary);
     min-height: 56px;
-    /* Garante alinhamento se os títulos tiverem tamanhos diferentes */
 }
 
 .product-subtitle {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--text-secondary);
     margin: 4px 0 16px;
 }
 
 .price-range {
     margin: auto 0 20px 0;
-    /* Empurra o preço para baixo */
 }
 
 .original-price {
     font-size: 14px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--text-secondary);
     text-decoration: line-through;
     display: block;
+    opacity: 0.7;
+    /* Levemente mais apagado */
 }
 
 .current-price {
     font-size: 22px;
     font-weight: 700;
-    color: #a855f7;
+    color: var(--accent-1);
+    /* Usa a cor de destaque do tema */
 }
 
 .buy-button {
     display: block;
     width: 100%;
     padding: 12px;
-    background: linear-gradient(135deg, #a855f7 0%, #7e22ce 100%);
-    color: white;
+    /* Usa o gradiente do tema */
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    color: var(--bg-dark);
+    /* Texto escuro para contraste */
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
     transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(168, 85, 247, 0.2);
+    box-shadow: 0 5px 15px rgba(var(--accent-1-rgb), 0.2);
+    /* Usa a sombra com a cor do tema */
 }
 
 .buy-button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 8px 25px rgba(var(--accent-1-rgb), 0.4);
+    /* Sombra mais forte no hover */
 }
 
 

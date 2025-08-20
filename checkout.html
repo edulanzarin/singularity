@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Quartzo Store</title>
+    <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/checkout.css" rel="stylesheet">
+</head>
+
+<body class="checkout-page-body">
+
+    <header class="header" id="header">
+        <a href="index.html" class="logo-container">
+            <div class="logo"><img src="assets/images/icon.png" alt="Logo" width="100%"></div>
+            <div class="logo-text">Quartzo Store</div>
+        </a>
+        <nav class="main-menu" id="mainMenu">
+            <a href="index.html#home" class="menu-item">Início</a>
+            <a href="index.html#products" class="menu-item">Produtos</a>
+            <a href="index.html#about" class="menu-item">Sobre</a>
+            <a href="https://discord.gg/seuservidor" target="_blank" rel="noopener noreferrer"
+                class="menu-item external">Discord ↗</a>
+        </nav>
+        <div class="menu-toggle" id="menuToggle">
+            <span></span><span></span><span></span>
+        </div>
+    </header>
+
+    <main class="checkout-container">
+        <div class="product-details">
+            <img id="productImage" src="" alt="Imagem do Produto" class="product-image-large">
+            <h1 id="productTitle">Nome do Produto</h1>
+            <p id="productDescription" class="product-description-text">
+                Descrição detalhada do produto, explicando seus benefícios, compatibilidade e como ele resolve o
+                problema do cliente.
+            </p>
+        </div>
+
+        <div class="payment-details">
+            <h2>Escolha o Plano</h2>
+            <div class="plan-options" id="planOptionsContainer">
+            </div>
+
+            <div class="price-display">
+                <span>Valor total:</span>
+                <strong id="productPrice">R$ 0,00</strong>
+            </div>
+
+            <h2>Forma de Pagamento</h2>
+            <div class="payment-method">
+                <div class="pix-option">
+                    <img src="assets/images/pix-icon.png" alt="PIX" height="24">
+                    <span>PIX (QR Code gerado após a compra)</span>
+                </div>
+            </div>
+
+            <a href="#" class="checkout-button">
+                Finalizar Compra
+            </a>
+        </div>
+    </main>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/checkout.js"></script>
+</body>
+
+</html>
