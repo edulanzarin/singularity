@@ -57,36 +57,23 @@ body {
 body::before {
     content: '';
     position: fixed;
-    /* Usa 'fixed' para que não role com a página */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     z-index: -1;
-    /* Coloca o efeito atrás de todo o conteúdo */
     pointer-events: none;
-    /* Garante que o efeito não interfira com cliques */
 
-    /* Cria as "manchas" usando gradientes radiais */
     background:
-        /* Mancha 1 (vermelho, no topo à esquerda) */
-        radial-gradient(circle at 20% 30%, var(--accent-1), transparent 40%),
+        radial-gradient(circle at 20% 30%, var(--accent-1), transparent 15%),
+        radial-gradient(circle at 80% 60%, var(--accent-2), transparent 20%),
+        radial-gradient(circle at 50% 110%, var(--accent-bright), transparent 30%);
 
-        /* Mancha 2 (laranja, no centro à direita) */
-        radial-gradient(circle at 80% 60%, var(--accent-2), transparent 50%),
-
-        /* Mancha 3 (laranja-amarelado, em baixo) - Opcional */
-        radial-gradient(circle at 50% 110%, var(--accent-bright), transparent 60%);
-
-    /* Controla o tamanho de cada mancha individualmente */
     background-size: 1000px 1000px, 1200px 1200px, 900px 900px;
     background-repeat: no-repeat;
 
-    /* A mágica acontece aqui: suaviza as bordas e deixa tudo bem claro */
     filter: blur(120px);
-    /* Aumente para mais suavidade */
     opacity: 0.1;
-    /* Aumente para mais intensidade */
 }
 
 /* Scrollbar Customizada com tema INFERNO ESCARLATE */
