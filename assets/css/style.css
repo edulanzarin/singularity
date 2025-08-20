@@ -212,7 +212,6 @@ body::before {
 .menu-item:hover,
 .menu-item.active {
     color: var(--text-primary);
-    text-shadow: 0 0 12px var(--accent-1);
 }
 
 /* 4. SEÇÃO HERO */
