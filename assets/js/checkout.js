@@ -1,56 +1,59 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Banco de dados simulado com informações dos produtos
     const productData = {
-        // --- PRODUTOS SPOOFER (JÁ EXISTENTES) ---
+        // --- PRODUTOS SPOOFER ---
         'bioguard': {
             title: 'BioGuard Spoofer',
-            description: 'Nosso spoofer mais avançado, garantindo proteção completa e indetectável. Ideal para quem busca segurança máxima e desempenho em todos os cenários. Compatível com os principais sistemas.',
+            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
             image: 'assets/images/spoofer.jpg',
             prices: {
-                weekly: '70.00',
-                monthly: '150.00',
-                lifetime: '300.00'
-            }
+                lifetime: '110.00'
+            },
+            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
         'portable': {
             title: 'Portable Spoofer',
-            description: 'A solução perfeita para quem precisa de flexibilidade. Leve e eficiente, este spoofer funciona de forma portátil sem necessidade de instalações complexas. Proteção garantida em qualquer lugar.',
+            description: 'A solução mais prática e rápida contra banimentos de HWID...',
             image: 'assets/images/portable-spoofer.jpg',
             prices: {
                 monthly: '120.00',
                 lifetime: '250.00'
-            }
+            },
+            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
-        // --- NOVOS PRODUTOS DE LEAGUE OF LEGENDS ---
+        // --- PRODUTOS DE LEAGUE OF LEGENDS ---
         'lol-obsydian': {
             title: 'Obysidian League of Legends',
-            description: 'Script completo com features avançadas para dominar o jogo. Inclui prediction, orbwalker e evade, tudo com a máxima segurança.',
+            description: 'Script completo com features avançadas para dominar o jogo...',
             image: 'assets/images/lol-obsydian.jpg',
             prices: {
                 weekly: '35.00',
                 monthly: '85.00',
                 lifetime: '150.00'
-            }
+            },
+            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
         },
         'lol-crash': {
             title: 'Crash Ultimate PEN DRIVE',
-            description: 'Uma solução indetectável que roda diretamente do seu Pen Drive, garantindo que nenhum arquivo fique em seu computador. Segurança e praticidade.',
+            description: 'Uma solução indetectável que roda diretamente do seu Pen Drive...',
             image: 'assets/images/lol-crash.jpg',
             prices: {
                 weekly: '70.00',
                 monthly: '110.00',
                 lifetime: '150.00'
-            }
+            },
+            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada
         },
         'lol-engine': {
             title: 'Engine Soul',
-            description: 'Ferramenta de alta performance para otimização de scripts e melhoria de desempenho no League of Legends. Essencial para usuários avançados.',
+            description: 'Ferramenta de alta performance para otimização de scripts...',
             image: 'assets/images/lol-engine.jpg',
             prices: {
                 weekly: '15.00',
                 monthly: '45.00',
                 lifetime: '200.00'
-            }
+            },
+            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada
         }
     };
 
@@ -66,7 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productData[productId];
 
     if (product) {
-        // Atualiza os dados fixos do produto
+        // Atualiza o Breadcrumb dinamicamente
+        const breadcrumbContainer = document.getElementById('breadcrumbContainer');
+        if (breadcrumbContainer && product.category) {
+            breadcrumbContainer.innerHTML = `
+            <a href="index.html#products">Produtos</a>
+            <span>&gt;</span>
+            <a href="${product.category.link}">${product.category.name}</a>
+            <span>&gt;</span>
+            <h1>${product.title}</h1>
+        `;
+        }
+
+        // Atualiza os dados fixos do produto (código que você já tem)
         document.getElementById('productImage').src = product.image;
         document.getElementById('productTitle').textContent = product.title;
         document.getElementById('productDescription').textContent = product.description;
