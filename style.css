@@ -67,8 +67,8 @@ body {
 }
 
 #home {
-    background: url('images/background.jpg') no-repeat center center/cover;
     justify-content: flex-start;
+    background: url('images/background.jpg') no-repeat center center/cover;
 }
 
 #home::before {
@@ -172,7 +172,7 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(3rem, 6vw, 5rem);
+    font-size: clamp(1.5rem, 4.5vw, 3.5rem);
     line-height: 1.1;
     font-weight: 800;
     color: var(--text-primary);
@@ -187,7 +187,7 @@ body {
 }
 
 .hero-subtitle {
-    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-size: clamp(1rem, 2vw, 1.1rem);
     color: var(--text-secondary);
     max-width: 550px;
     line-height: 1.6;
@@ -301,33 +301,31 @@ body {
     margin-bottom: 20px;
 }
 
-.product-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.product-footer-details {
     margin-top: auto;
+    /* Empurra o botão para o final do card */
+    text-align: right;
+    /* Alinha o botão à direita */
 }
 
-.product-price {
-    font-size: 1.5rem;
-    font-weight: 800;
+.product-button-details {
+    display: inline-block;
     color: var(--accent-purple);
-}
-
-.product-button {
-    background: linear-gradient(90deg, var(--accent-purple), var(--accent-violet));
-    color: var(--text-primary);
     text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-weight: 600;
+    font-weight: 700;
     font-size: 0.9rem;
+    padding: 8px 0;
+    /* Apenas espaçamento vertical */
     transition: all 0.3s ease;
+    background: none;
+    border: none;
 }
 
-.product-button:hover {
-    filter: brightness(1.2);
-    box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+.product-button-details:hover {
+    color: #c084fc;
+    /* Um tom de roxo mais claro para o hover */
+    letter-spacing: 0.5px;
+    /* Efeito sutil de espaçamento */
 }
 
 /* 6. SEÇÃO DE VANTAGENS */
