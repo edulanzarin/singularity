@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quartzo Store - Produtos Digitais</title>
-    <link rel="icon" href="images/icon.png" image/x-icon">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
 </head>
 
@@ -16,19 +16,17 @@
     <header class="header" id="header">
         <a href="#home" class="logo-container">
             <div class="logo">
-                <img src="images/icon.png" alt="Logo" width="100%">
+                <img src="images/icon.png" alt="Logo Quartzo Store" width="100%">
             </div>
             <div class="logo-text">Quartzo Store</div>
         </a>
-
         <nav class="main-menu" id="mainMenu">
             <a href="#home" class="menu-item active">Início</a>
             <a href="#products" class="menu-item">Produtos</a>
-            <a href="#about" class="menu-item">Sobre</a>
+            <a href="#features" class="menu-item">Vantagens</a>
             <a href="https://discord.gg/seuservidor" target="_blank" rel="noopener noreferrer"
-                class="menu-item external">Discord</a>
+                class="menu-item external">Discord ↗</a>
         </nav>
-
         <div class="menu-toggle" id="menuToggle">
             <span></span>
             <span></span>
@@ -36,134 +34,173 @@
         </div>
     </header>
 
-    <section id="home" class="section">
-        <div class="hero-content">
-            <h1>FERRAMENTAS GAMER DE<br><span>ALTA PERFORMANCE</span></h1>
-            <p>Domine o jogo com ferramentas seguras e otimizadas.</p>
-            <a href="#products" class="hero-cta">EXPLORAR</a>
-        </div>
-    </section>
-
-    <section id="products" class="section">
-        <div class="products-wrapper">
-            <h2 class="section-title">Nossos Produtos</h2>
-            <div class="coverflow-container" tabindex="0">
-                <div class="coverflow" id="coverflow">
-                    <div class="coverflow-item" data-index="0">
-                        <div class="cover image-loading">
-                            <img src="images/spoofer.jpg" alt="Spoofer" loading="lazy">
-                            <div class="card-info">
-                                <h3>Spoofer</h3>
-                                <p class="card-cta">Ver detalhes →</p>
-                            </div>
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-
-                    <div class="coverflow-item" data-index="1">
-                        <div class="cover image-loading">
-                            <img src="images/league-of-legends.jpg" alt="League of Legends" loading="lazy">
-                            <div class="card-info">
-                                <h3>League of Legends</h3>
-                                <p class="card-cta">Ver detalhes →</p>
-                            </div>
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-
-                    <div class="coverflow-item" data-index="2">
-                        <div class="cover image-loading">
-                            <img src="images/valorant.jpeg" alt="Valorant" loading="lazy">
-                            <div class="card-info">
-                                <h3>Valorant</h3>
-                                <p class="card-cta">Ver detalhes →</p>
-                            </div>
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-
-                    <div class="coverflow-item" data-index="3">
-                        <div class="cover image-loading">
-                            <img src="images/contas-lol.png" alt="Contas LoL" loading="lazy">
-                            <div class="card-info">
-                                <h3>Contas League of Legends</h3>
-                                <p class="card-cta">Ver detalhes →</p>
-                            </div>
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-
-                    <div class="coverflow-item" data-index="4">
-                        <div class="cover image-loading">
-                            <img src="images/vanguard.png" alt="Vanguard OFF" loading="lazy">
-                            <div class="card-info">
-                                <h3>Vanguard OFF</h3>
-                                <p class="card-cta">Ver detalhes →</p>
-                            </div>
-                        </div>
-                        <div class="reflection"></div>
-                    </div>
-                </div>
-
-                <button class="nav-button prev" onclick="navigate(-1)">‹</button>
-                <button class="nav-button next" onclick="navigate(1)">›</button>
-
-                <div class="dots-container" id="dots"></div>
+    <main>
+        <section id="home" class="section">
+            <div class="hero-content">
+                <h1 class="hero-title">A VANTAGEM QUE VOCÊ PRECISA<br><span>PARA VENCER</span></h1>
+                <p class="hero-subtitle">Eleve seu jogo com ferramentas de alta performance, segurança e suporte
+                    dedicado.</p>
+                <a href="#products" class="hero-cta">Ver Produtos</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="about" class="section">
-        <div class="about-content">
-            <div class="about-header">
-                <h2 class="section-title">Conheça a Quartzo Store</h2>
-                <p>A vanguarda em soluções gamer para otimizar sua performance.</p>
-            </div>
-
-            <div class="about-main">
-                <div class="about-visual">
-                    <div class="showcase-main">
-                        <div class="showcase-logo">
-                            <img src="images/icon.png" alt="Logo" width="100%">
+        <section id="products" class="section">
+            <div class="products-container">
+                <h2 class="section-title">Nossos Produtos</h2>
+                <p class="section-subtitle">Soluções otimizadas para os jogos mais populares do momento.</p>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-badge">Mais Vendido</div>
+                        <div class="product-image">
+                            <img src="images/spoofer.jpg" alt="Spoofer">
                         </div>
-                        <h3 class="showcase-title">Quartzo Store</h3>
-                        <p class="showcase-subtitle">Sua fonte confiável para ferramentas gamer de ponta.
-                        </p>
+                        <div class="product-info">
+                            <h3 class="product-title">Spoofer HWID</h3>
+                            <p class="product-description">Proteja sua identidade e evite banimentos de hardware com
+                                nossa solução definitiva.</p>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 49,90</span>
+                                <a href="#" class="product-button">Comprar Agora</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <div class="about-info">
-                    <h3>Eleve sua Experiência Gamer</h3>
-                    <p>Na Quartzo, nos dedicamos a fornecer as melhores ferramentas do mercado. Nossos produtos são
-                        desenvolvidos com foco em performance e estabilidade.</p>
-                    <ul class="feature-list">
-                        <li>Suporte Dedicado via Discord</li>
-                        <li>Atualizações Constantes</li>
-                        <li>Segurança e Privacidade Garantidas</li>
-                        <li>Compatibilidade Ampla</li>
-                    </ul>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/league-of-legends.jpg" alt="League of Legends">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Scripts para LoL</h3>
+                            <p class="product-description">Otimize suas jogadas, desvie de skillshots e suba de elo com
+                                precisão incomparável.</p>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 89,90</span>
+                                <a href="#" class="product-button">Comprar Agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-badge new">Novo</div>
+                        <div class="product-image">
+                            <img src="images/valorant.jpeg" alt="Valorant">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Cheats para Valorant</h3>
+                            <p class="product-description">Tenha vantagem tática com segurança e discrição, sem ser
+                                detectado pelo Vanguard.</p>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 99,90</span>
+                                <a href="#" class="product-button">Comprar Agora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="images/contas-lol.png" alt="Contas LoL">
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Contas Unranked LoL</h3>
+                            <p class="product-description">Comece sua jornada nas ranqueadas com contas seguras e
+                                prontas para jogar.</p>
+                            <div class="product-footer">
+                                <span class="product-price">R$ 29,90</span>
+                                <a href="#" class="product-button">Comprar Agora</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="stats-section">
-                <div class="stat-item">
-                    <div class="stat-number">100%</div>
-                    <div class="stat-label">Satisfação</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">✔️</div>
-                    <div class="stat-label">Seguro</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">⚡</div>
-                    <div class="stat-label">Alta Performance</div>
+        <section id="features" class="section">
+            <div class="features-container">
+                <h2 class="section-title">Por que escolher a Quartzo?</h2>
+                <p class="section-subtitle">Nós oferecemos mais do que apenas produtos. Oferecemos uma experiência
+                    completa.</p>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.286zm0 13.036h.008v.008h-.008v-.008z" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Segurança Máxima</h3>
+                        <p class="feature-description">Nossos produtos são desenvolvidos com foco em anti-cheat,
+                            garantindo uso seguro e sem detecções.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Alta Performance</h3>
+                        <p class="feature-description">Scripts otimizados para não impactar seu FPS, mantendo a fluidez
+                            total do seu jogo.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.182-3.182m0-4.991v4.99" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Atualizações Constantes</h3>
+                        <p class="feature-description">Estamos sempre atualizando nossas ferramentas para acompanhar as
+                            novidades dos jogos.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126z" />
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Suporte Dedicado</h3>
+                        <p class="feature-description">Nossa equipe está disponível 24/7 no Discord para te ajudar com
+                            qualquer dúvida ou problema.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    </main>
 
     <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-about">
+                <a href="#home" class="logo-container">
+                    <div class="logo">
+                        <img src="images/icon.png" alt="Logo Quartzo Store" width="100%">
+                    </div>
+                    <div class="logo-text">Quartzo Store</div>
+                </a>
+                <p class="footer-description">A vanguarda em soluções gamer para otimizar sua performance. Junte-se à
+                    nossa comunidade!</p>
+            </div>
+            <div class="footer-links">
+                <h4 class="footer-title">Links Rápidos</h4>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#products">Produtos</a></li>
+                    <li><a href="#features">Vantagens</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h4 class="footer-title">Comunidade</h4>
+                <a href="https://discord.gg/seuservidor" class="footer-discord-button" target="_blank"
+                    rel="noopener noreferrer">
+                    Entrar no Discord
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Quartzo Store. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <div class="scroll-to-top" id="scrollToTop">
@@ -171,7 +208,6 @@
     </div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>

@@ -1,129 +1,77 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Elementos do DOM
-    const items = document.querySelectorAll('.coverflow-item');
-    const dotsContainer = document.getElementById('dots');
-    const container = document.querySelector('.coverflow-container');
+
+    // --- ELEMENTOS DO DOM ---
+    const header = document.getElementById('header');
     const menuToggle = document.getElementById('menuToggle');
     const mainMenu = document.getElementById('mainMenu');
-    const header = document.getElementById('header');
     const scrollToTopBtn = document.getElementById('scrollToTop');
+    const sections = document.querySelectorAll('.section');
+    const menuItems = document.querySelectorAll('.main-menu a');
 
-    let currentIndex = 0;
-    let isAnimating = false;
-
-    // DADOS DOS PRODUTOS COM URLS
-    const productData = [
-        { url: "spoofer.html" },
-        { url: "lol.html" },
-        { url: "valorant.html" }
-    ];
-
-    // Funções de Navegação e Animação
-    function updateCoverflow() {
-        if (isAnimating) return;
-        isAnimating = true;
-
-        items.forEach((item, index) => {
-            let offset = index - currentIndex;
-            if (offset < -items.length / 2) offset += items.length;
-            if (offset > items.length / 2) offset -= items.length;
-
-            const absOffset = Math.abs(offset);
-            const direction = Math.sign(offset);
-
-            let translateX = offset * 50;
-            let translateZ = -absOffset * 100;
-            let rotateY = -direction * 50;
-            let opacity = absOffset > 1 ? 0 : 1 - (absOffset * 0.2);
-            let scale = 1 - (absOffset * 0.1);
-
-            item.style.transform = `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-            item.style.opacity = opacity;
-            item.style.zIndex = items.length - absOffset;
-            item.classList.toggle('active', index === currentIndex);
-        });
-
-        dots.forEach((dot, index) => dot.classList.toggle('active', index === currentIndex));
-        setTimeout(() => { isAnimating = false; }, 600);
-    }
-
-    window.navigate = (direction) => {
-        if (isAnimating) return;
-        currentIndex = (currentIndex + direction + items.length) % items.length;
-        updateCoverflow();
+    // --- LÓGICA DO CABEÇALHO ---
+    // Efeito de 'scrolled' no cabeçalho
+    const handleHeaderScroll = () => {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
     };
 
-    const goToIndex = (index) => {
-        if (isAnimating || index === currentIndex) return;
-        currentIndex = index;
-        updateCoverflow();
-    };
-
-    // Criar os "dots" de navegação
-    items.forEach((_, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'dot';
-        dot.onclick = () => goToIndex(index);
-        dotsContainer.appendChild(dot);
-    });
-    const dots = document.querySelectorAll('.dot');
-
-    // Event Listeners
+    // Abrir/Fechar menu mobile
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
         mainMenu.classList.toggle('active');
     });
 
-    document.querySelectorAll('.menu-item:not(.external)').forEach(item => {
+    // Fechar menu mobile ao clicar em um item
+    menuItems.forEach(item => {
         item.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mainMenu.classList.remove('active');
-        });
-    });
-
-    // LÓGICA DE CLIQUE
-    items.forEach((item, index) => {
-        item.addEventListener('click', () => {
-            if (index === currentIndex) {
-                window.location.href = productData[index].url;
-            } else {
-                goToIndex(index);
+            if (mainMenu.classList.contains('active')) {
+                menuToggle.classList.remove('active');
+                mainMenu.classList.remove('active');
             }
         });
     });
 
-    container.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') navigate(-1);
-        if (e.key === 'ArrowRight') navigate(1);
-    });
+    // --- LÓGICA DO SCROLL ---
+    const handleScroll = () => {
+        // Mostra/Esconde o botão "Voltar ao Topo"
+        if (window.scrollY > 300) {
+            scrollToTopBtn.classList.add('visible');
+        } else {
+            scrollToTopBtn.classList.remove('visible');
+        }
 
-    // Scroll e Menu Ativo
-    const sections = document.querySelectorAll('.section');
-    const menuItems = document.querySelectorAll('.menu-item');
-
-    const updateActiveState = () => {
-        const scrollPosition = window.scrollY + header.offsetHeight;
+        // Atualiza o item de menu ativo
+        let currentSection = '';
         sections.forEach(section => {
-            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-                menuItems.forEach(item => {
-                    item.classList.remove('active');
-                    if (item.getAttribute('href') === `#${section.id}`) {
-                        item.classList.add('active');
-                    }
-                });
+            const sectionTop = section.offsetTop;
+            if (window.scrollY >= sectionTop - header.offsetHeight) {
+                currentSection = section.getAttribute('id');
             }
         });
 
-        header.classList.toggle('scrolled', window.scrollY > 50);
-        scrollToTopBtn.classList.toggle('visible', window.scrollY > 500);
+        menuItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href').includes(currentSection)) {
+                item.classList.add('active');
+            }
+        });
+
+        // Chama a função do header também
+        handleHeaderScroll();
     };
 
-    window.addEventListener('scroll', updateActiveState);
+    // Event listener para o scroll geral
+    window.addEventListener('scroll', handleScroll);
 
+    // Event listener para o clique no botão "Voltar ao Topo"
     scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
-    // Inicialização
-    updateCoverflow();
 });
