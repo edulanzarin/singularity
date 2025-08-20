@@ -142,7 +142,7 @@ body::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(18, 13, 11, 0.95) 40%, rgba(18, 13, 11, 0.2) 70%, transparent);
+    background: linear-gradient(to right, rgba(18, 13, 11, 0.95) 20%, rgba(18, 13, 11, 0.2) 70%, transparent);
     z-index: 1;
 }
 
