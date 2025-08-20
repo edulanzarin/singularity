@@ -42,7 +42,7 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Lexend Deca', sans-serif;
     overflow-x: hidden;
     position: relative;
     background-color: var(--bg-dark);
@@ -51,6 +51,42 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+/* EFEITO DE MANCHAS DE LUZ NO BACKGROUND */
+body::before {
+    content: '';
+    position: fixed;
+    /* Usa 'fixed' para que não role com a página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* Coloca o efeito atrás de todo o conteúdo */
+    pointer-events: none;
+    /* Garante que o efeito não interfira com cliques */
+
+    /* Cria as "manchas" usando gradientes radiais */
+    background:
+        /* Mancha 1 (vermelho, no topo à esquerda) */
+        radial-gradient(circle at 20% 30%, var(--accent-1), transparent 40%),
+
+        /* Mancha 2 (laranja, no centro à direita) */
+        radial-gradient(circle at 80% 60%, var(--accent-2), transparent 50%),
+
+        /* Mancha 3 (laranja-amarelado, em baixo) - Opcional */
+        radial-gradient(circle at 50% 110%, var(--accent-bright), transparent 60%);
+
+    /* Controla o tamanho de cada mancha individualmente */
+    background-size: 1000px 1000px, 1200px 1200px, 900px 900px;
+    background-repeat: no-repeat;
+
+    /* A mágica acontece aqui: suaviza as bordas e deixa tudo bem claro */
+    filter: blur(120px);
+    /* Aumente para mais suavidade */
+    opacity: 0.1;
+    /* Aumente para mais intensidade */
 }
 
 /* Scrollbar Customizada com tema INFERNO ESCARLATE */
@@ -93,6 +129,22 @@ body {
     inset: 0;
     background: linear-gradient(to right, rgba(18, 13, 11, 0.95) 40%, rgba(18, 13, 11, 0.2) 70%, transparent);
     z-index: 1;
+}
+
+#home::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60%;
+    /* Ajuste conforme a necessidade */
+    height: 100%;
+    /* Ajuste conforme a necessidade */
+    background: linear-gradient(to bottom right, transparent 20%, rgba(18, 13, 11, 0.2) 60%, rgba(18, 13, 11, 0.95) 95%);
+    z-index: 1;
+    /* Garante que fique acima do background, mas abaixo do conteúdo */
+    pointer-events: none;
+    /* Permite que cliques passem pelo gradiente */
 }
 
 .section-title {
@@ -283,6 +335,30 @@ body {
     width: 100%;
     height: 180px;
     overflow: hidden;
+    /* Adicione position: relative para o efeito funcionar */
+    position: relative;
+}
+
+.product-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /* A mágica da vinheta com gradiente radial */
+    background: radial-gradient(ellipse at center,
+            transparent 40%,
+            rgba(var(--accent-1-rgb)) 100%);
+
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
+
+
+.product-card:hover .product-image::after {
+    opacity: 1;
 }
 
 .product-image img {
@@ -497,6 +573,170 @@ body {
     display: none;
 }
 
+/* 11. SEÇÃO DE DEPOIMENTOS (SLIDER SIMPLES) */
+
+.testimonials-container {
+    width: 100%;
+    max-width: 800px;
+    /* Mais focado e centralizado */
+    text-align: center;
+}
+
+.testimonial-slider-wrapper {
+    position: relative;
+    margin-top: 40px;
+    overflow: hidden;
+    /* Esconde os slides que não estão ativos */
+}
+
+.testimonial-slider {
+    display: flex;
+    /* Alinha os cards um ao lado do outro */
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.testimonial-card {
+    flex: 0 0 100%;
+    /* Cada card ocupa 100% da largura do contêiner */
+    width: 100%;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+}
+
+/* Estilos internos do card (podem ser os mesmos de antes) */
+.testimonial-content {
+    flex-grow: 1;
+}
+
+.testimonial-text {
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.testimonial-author img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-1);
+}
+
+.author-name {
+    display: block;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.author-product {
+    font-size: 0.9rem;
+    color: var(--accent-2);
+}
+
+/* --- Navegação do Slider Melhorada --- */
+.slider-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+}
+
+.slider-nav .nav-arrow {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    /* Tamanho do caractere da seta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-nav .nav-arrow:hover {
+    background: var(--accent-1);
+    color: var(--text-primary);
+    border-color: var(--accent-1);
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(var(--accent-1-rgb), 0.6);
+}
+
+.slider-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.slider-dots .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--text-secondary);
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.slider-dots .dot.active {
+    opacity: 1;
+    background: var(--accent-1);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px rgba(var(--accent-1-rgb), 0.7);
+}
+
+/* 10. ANIMAÇÕES GLOBAIS DE SURGIMENTO */
+
+/* Define a animação 'fade-up' */
+@keyframes fade-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Classe inicial para os elementos que vão ser animados.
+  Eles começam invisíveis e fora da posição final.
+*/
+.fade-up-element {
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Classe que será adicionada pelo JavaScript quando o elemento
+  estiver visível na tela, ativando a animação.
+*/
+.fade-up-element.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 @media (max-width: 768px) {
     .section {
         padding: 100px 20px;
@@ -559,35 +799,4 @@ body {
     .footer-links ul {
         padding-left: 0;
     }
-}
-
-/* 10. ANIMAÇÕES GLOBAIS DE SURGIMENTO */
-
-/* Define a animação 'fade-up' */
-@keyframes fade-up {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Classe inicial para os elementos que vão ser animados.
-  Eles começam invisíveis e fora da posição final.
-*/
-.fade-up-element {
-    opacity: 0;
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Classe que será adicionada pelo JavaScript quando o elemento
-  estiver visível na tela, ativando a animação.
-*/
-.fade-up-element.is-visible {
-    opacity: 1;
-    transform: translateY(0);
 }

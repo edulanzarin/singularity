@@ -8,13 +8,14 @@
     <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <header class="header" id="header">
-        <a href="#home" class="logo-container">
+        <a href="index.html" class="logo-container">
             <div class="logo">
                 <img src="assets/images/icon.png" alt="Logo Quartzo Store" width="100%">
             </div>
@@ -166,6 +167,65 @@
                 </div>
             </div>
         </section>
+
+        <section id="testimonials" class="section">
+            <div class="testimonials-container fade-up-element">
+                <h2 class="section-title">O que dizem os clientes</h2>
+                <p class="section-subtitle">A satisfação de quem confia em nossos produtos é a nossa maior recompensa.
+                </p>
+
+                <div class="testimonial-slider-wrapper">
+                    <div class="testimonial-slider">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"O spoofer funciona perfeitamente! Zero problemas com
+                                    banimento e o suporte foi super atencioso. Recomendo demais."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/avatar1.png" alt="Avatar do cliente">
+                                <div class="author-info">
+                                    <span class="author-name">Carlos S.</span>
+                                    <span class="author-product">Cliente de Spoofer HWID</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"Finalmente consegui subir de elo no LoL. O script de
+                                    otimização é leve, seguro e faz toda a diferença nas partidas. Valeu cada centavo!"
+                                </p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/avatar2.png" alt="Avatar do cliente">
+                                <div class="author-info">
+                                    <span class="author-name">Juliana M.</span>
+                                    <span class="author-product">Cliente de Script para LoL</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">"Comprei uma conta unranked e veio tudo certinho, entrega
+                                    super rápida. Loja de confiança, com certeza comprarei de novo."</p>
+                            </div>
+                            <div class="testimonial-author">
+                                <img src="assets/images/avatar3.png" alt="Avatar do cliente">
+                                <div class="author-info">
+                                    <span class="author-name">Fernando P.</span>
+                                    <span class="author-product">Cliente de Conta Unranked</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="slider-nav">
+                        <button class="nav-arrow prev" id="testimonialPrev">‹</button>
+                        <div class="slider-dots" id="testimonialDots"></div>
+                        <button class="nav-arrow next" id="testimonialNext">›</button>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="footer">
@@ -205,6 +265,7 @@
         <span>↑</span>
     </div>
     <script src="assets/js/utils.js"></script>
+    <script src="assets/js/index.js"></script>
 </body>
 
 </html>
