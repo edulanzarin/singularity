@@ -1,4 +1,6 @@
-.champion-selection-section {
+/* --- ESTILOS EXISTENTES --- */
+.champion-selection-section,
+.selection-section {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
     border: 1px solid var(--border-color);
@@ -37,7 +39,6 @@
 
 .search-box {
     position: relative;
-    /* Adicione isso */
     width: 100%;
     max-width: 400px;
 }
@@ -49,7 +50,6 @@
     border-radius: 8px;
     color: var(--text-primary);
     padding: 12px 45px 12px 15px;
-    /* Aumente o padding à direita para dar espaço à lupa */
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
@@ -67,26 +67,18 @@
 
 .search-button {
     position: absolute;
-    /* Adicione isso */
     right: 15px;
-    /* Ajuste para o espaçamento à direita */
     top: 50%;
-    /* Alinha verticalmente */
     transform: translateY(-50%);
-    /* Centraliza verticalmente */
     background: transparent;
-    /* Remove o fundo */
     border: none;
-    /* Remove a borda */
     padding: 0;
-    /* Remove padding */
     color: var(--text-secondary);
     transition: color 0.2s ease;
 }
 
 .search-button:hover {
     color: var(--accent-1);
-    /* Mude a cor no hover */
 }
 
 .filter-button {
@@ -149,6 +141,7 @@
     padding: 5px;
     border-radius: 8px;
     border: 2px solid transparent;
+    cursor: pointer;
 }
 
 .champion-icon-container.selected {
@@ -188,138 +181,169 @@
     font-weight: 600;
 }
 
-/* ------------------- ESTILOS DO GRID DE PRODUTOS ------------------- */
-.products-grid-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+/* --- NOVOS ESTILOS --- */
+
+/* Estilo para as seções desabilitadas */
+.selection-section.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    /* Impede cliques nos elementos internos */
+    transition: opacity 0.3s ease;
+    display: none;
 }
 
-.products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.product-card {
+/* Carrossel de Skins */
+.skin-carousel-container {
     position: relative;
-    background: rgba(255, 255, 255, 0.03);
-    backdrop-filter: blur(15px);
-    border: 1px solid var(--border-color);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    padding: 15px 0;
+    /* Espaçamento para as setas, se necessário */
+}
+
+.skin-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    /* Espaço para a scrollbar */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    /* Para iOS */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-2) transparent;
+}
+
+.skin-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.skin-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--accent-2);
+    border-radius: 4px;
+}
+
+.skin-carousel::-webkit-scrollbar-track {
+    background-color: var(--bg-dark);
+}
+
+.skin-card {
+    flex-shrink: 0;
+    width: 150px;
+    /* Largura fixa para os cards */
     display: flex;
     flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-dark);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
+.skin-card.selected {
     border-color: var(--accent-1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+    background: rgba(var(--accent-1-rgb), 0.1);
 }
 
-.product-image {
+.skin-card:hover {
+    transform: translateY(-5px);
+}
+
+.skin-card img {
     width: 100%;
-    height: 180px;
-    overflow: hidden;
-    position: relative;
-}
-
-.product-image::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(ellipse at center,
-            transparent 50%,
-            rgba(var(--accent-1-rgb)) 100%);
-    opacity: 0.2;
-    transition: opacity 0.4s ease;
-}
-
-.product-card:hover .product-image::after {
-    opacity: 0.8;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
+    border-radius: 8px;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    border: 1px solid var(--border-color);
 }
 
-.product-card:hover .product-image img {
-    transform: scale(1.1);
+.skin-name {
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
-.card-content {
+.skin-card.selected .skin-name {
+    color: var(--accent-1);
+    font-weight: 600;
+}
+
+/* Grid de Contas */
+.accounts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 15px;
+}
+
+.account-card {
+    background: var(--bg-dark);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    gap: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.product-title {
-    font-size: 1.4rem;
-    font-weight: 700;
-    margin: 0 0 10px;
+.account-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.account-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.account-info h3 {
+    font-size: 1.25rem;
     color: var(--text-primary);
 }
 
-.product-subtitle {
+.account-info p {
     font-size: 0.9rem;
     color: var(--text-secondary);
-    margin: 4px 0 16px;
-    flex-grow: 1;
 }
 
-.price-range {
-    margin-top: auto;
-    margin-bottom: 20px;
-}
-
-.original-price {
-    font-size: 14px;
-    color: var(--text-secondary);
-    text-decoration: line-through;
-    display: block;
-    opacity: 0.7;
-}
-
-.current-price {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--accent-1);
-}
-
-.buy-button {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
-    color: var(--bg-dark);
-    text-align: center;
-    text-decoration: none;
-    border-radius: 8px;
+.account-info .rank-level {
+    font-size: 1rem;
     font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(var(--accent-1-rgb), 0.2);
+    color: var(--accent-2);
+}
+
+.account-price {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent-1);
+    margin-top: auto;
+    /* Empurra o preço para baixo */
+}
+
+.account-buy-button {
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    color: var(--bg-dark);
+    padding: 12px 20px;
     border: none;
-    /* Adicionado para remover a borda padrão do botão */
-}
-
-.buy-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(var(--accent-1-rgb), 0.4);
-}
-
-.no-results-message {
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease;
     text-align: center;
-    color: var(--text-secondary);
-    margin-top: 40px;
-    font-size: 1.2rem;
+}
+
+.account-buy-button:hover {
+    transform: scale(1.03);
 }
 
 /* Responsividade */

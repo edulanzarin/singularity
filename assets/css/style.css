@@ -158,13 +158,11 @@ body::before {
     position: absolute;
     inset: 0;
     background: linear-gradient(to right,
-            rgba(18, 13, 11, 0.9) 30%,
+            rgba(18, 13, 11, 0.9) 50%,
             /* Começa bem escuro */
-            rgba(18, 13, 11, 0.8) 50%,
+            rgba(18, 13, 11, 0.8) 75%,
             /* Um pouco menos escuro */
-            rgba(18, 13, 11, 0.6) 70%,
-            /* Começa a clarear */
-            rgba(18, 13, 11, 0.2) 90%,
+            rgba(18, 13, 11, 0.6) 100%,
             /* Bem transparente */
             transparent 100%
             /* Totalmente transparente no final */
@@ -177,7 +175,7 @@ body::before {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 60%;
+    width: 70%;
     /* Ajuste conforme a necessidade */
     height: 100%;
     /* Ajuste conforme a necessidade */
