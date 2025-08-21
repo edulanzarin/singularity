@@ -1,0 +1,342 @@
+/* Importa a fonte Lexend Deca, se ainda não estiver em products-page.css */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap');
+
+/* Certifique-se de que as variáveis de cor estão definidas */
+:root {
+    --bg-dark: #120D0B;
+    --bg-light: #2A1F1D;
+    --text-primary: #FFFFFF;
+    --text-secondary: #D1C7C2;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --accent-1: #D90429;
+    --accent-2: #FF4800;
+    --accent-bright: #F77F00;
+    --accent-1-rgb: 217, 4, 41;
+}
+
+.product-page-body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+}
+
+.products-grid-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px 60px;
+}
+
+/* ------------------- NOVA SEÇÃO DE SELEÇÃO DE CAMPEÕES ------------------- */
+.champion-selection-section {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.section-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 60px;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+.search-and-filter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.search-box {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-box input {
+    width: 100%;
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    padding: 12px 15px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-box input:focus {
+    border-color: var(--accent-1);
+    box-shadow: 0 0 10px rgba(var(--accent-1-rgb), 0.3);
+}
+
+.search-box input::placeholder {
+    color: var(--text-secondary);
+}
+
+.filter-button {
+    background: var(--bg-light);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.filter-button:hover {
+    border-color: var(--accent-1);
+    color: var(--text-primary);
+}
+
+.filter-button svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* Lista de Campeões */
+.champion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 15px;
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 15px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-2) transparent;
+}
+
+.champion-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.champion-list::-webkit-scrollbar-thumb {
+    background-color: var(--accent-2);
+    border-radius: 4px;
+}
+
+.champion-list::-webkit-scrollbar-track {
+    background-color: var(--bg-dark);
+}
+
+.champion-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    text-align: center;
+    position: relative;
+    padding: 5px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+}
+
+.champion-icon-container.selected {
+    border-color: var(--accent-1);
+    transform: scale(1.05);
+    background: rgba(var(--accent-1-rgb), 0.1);
+}
+
+.champion-icon-container:hover {
+    transform: translateY(-5px);
+}
+
+.champion-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.champion-icon-container.selected .champion-icon {
+    border-color: var(--accent-1);
+}
+
+.champion-name {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    transition: color 0.2s ease;
+}
+
+.champion-icon-container.selected .champion-name {
+    color: var(--accent-1);
+    font-weight: 600;
+}
+
+/* ------------------- ESTILOS DO GRID DE PRODUTOS ------------------- */
+.products-grid-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    position: relative;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.product-image {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative;
+}
+
+.product-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at center,
+            transparent 50%,
+            rgba(var(--accent-1-rgb)) 100%);
+    opacity: 0.2;
+    transition: opacity 0.4s ease;
+}
+
+.product-card:hover .product-image::after {
+    opacity: 0.8;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.product-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 10px;
+    color: var(--text-primary);
+}
+
+.product-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 4px 0 16px;
+    flex-grow: 1;
+}
+
+.price-range {
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+
+.original-price {
+    font-size: 14px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    display: block;
+    opacity: 0.7;
+}
+
+.current-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--accent-1);
+}
+
+.buy-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 100%);
+    color: var(--bg-dark);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(var(--accent-1-rgb), 0.2);
+    border: none;
+    /* Adicionado para remover a borda padrão do botão */
+}
+
+.buy-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(var(--accent-1-rgb), 0.4);
+}
+
+.no-results-message {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-top: 40px;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 800px) {
+    .search-and-filter {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        max-width: none;
+    }
+
+    .filter-button {
+        width: 100%;
+        justify-content: center;
+    }
+}

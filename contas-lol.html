@@ -10,22 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap"
         rel="stylesheet">
-    <link href="assets/css/products-page.css" rel="stylesheet">
     <link href="assets/css/style.css" rel="stylesheet">
-    <style>
-        .coming-soon-message {
-            text-align: center;
-            padding: 50px 20px;
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 15px;
-            background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
+    <link href="assets/css/products-page.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/contas-lol.css">
 </head>
 
 <body class="product-page-body">
@@ -58,9 +45,53 @@
             <h1>Contas League of Legends</h1>
         </div>
 
-        <div class="coming-soon-message fade-up-element">
-            <p>EM BREVE</p>
+        <div class="champion-selection-section">
+            <div class="selection-header">
+                <h2 class="section-title">SELECIONE SEU CAMPEÃO, <br> E GANHE UMA SKIN GRÁTIS!</h2>
+                <div class="search-and-filter">
+                    <div class="search-box">
+                        <input type="text" id="championSearch" placeholder="Pesquisar">
+                        <button class="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-search">
+                                <circle cx="11" cy="11" r="8" />
+                                <path d="m21 21-4.3-4.3" />
+                            </svg>
+                            Pesquisar
+                        </button>
+                    </div>
+                    <button class="filter-button">
+                        Filtros
+                        <span class="filter-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="lucide lucide-sliders">
+                                <line x1="4" x2="4" y1="21" y2="14" />
+                                <line x1="4" x2="4" y1="10" y2="3" />
+                                <line x1="12" x2="12" y1="21" y2="12" />
+                                <line x1="12" x2="12" y1="8" y2="3" />
+                                <line x1="20" x2="20" y1="21" y2="16" />
+                                <line x1="20" x2="20" y1="12" y2="3" />
+                                <line x1="1" x2="7" y1="14" y2="14" />
+                                <line x1="9" x2="15" y1="8" y2="8" />
+                                <line x1="17" x2="23" y1="16" y2="16" />
+                            </svg>
+                        </span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="champion-list" id="championList">
+            </div>
         </div>
+
+        <div class="products-grid-wrapper">
+            <h2 id="gridTitle" class="fade-up-element">Contas Disponíveis</h2>
+            <div class="products-grid" id="accountsGrid">
+            </div>
+        </div>
+
     </main>
 
     <footer class="footer fade-up-element">
@@ -96,8 +127,8 @@
         </div>
     </footer>
 
-
     <script src="assets/js/utils.js"></script>
+    <script src="assets/js/contas-lol.js"></script>
 </body>
 
 </html>
