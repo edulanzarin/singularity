@@ -105,6 +105,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const product = productData[productId];
 
     if (product) {
+        document.title = `${product.title} - Quartzo`;
+    }
+
+    if (product) {
         // Atualiza o Breadcrumb dinamicamente
         const breadcrumbContainer = document.getElementById('breadcrumbContainer');
         if (breadcrumbContainer && product.category) {

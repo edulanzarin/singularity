@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!payButton.disabled) {
                 const selectedMethod = document.querySelector('.payment-option.active input').value;
                 alert(`Iniciando pagamento com ${selectedMethod} para ${product.title} (${selectedPlan}). Total: R$ ${price}`);
-                // Aqui você adicionaria a lógica real para iniciar o pagamento (Stripe, Pix, etc.)
+                // Aqui você adicionaria a lógica real para iniciar o pagamento (Crédito, Pix, etc.)
             }
         });
 
