@@ -4,92 +4,92 @@ document.addEventListener('DOMContentLoaded', () => {
         // --- PRODUTOS SPOOFER ---
         'vanguard-spoofer': {
             title: 'Vanguard Spoofer',
-            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
+            description: 'O Spoofer definitivo para o Riot Vanguard. Desenvolvido para um bypass completo e indetectável, ele garante que você volte a jogar LoL e outros jogos da Riot sem preocupações com banimentos de HWID. Segurança, estabilidade e desempenho em primeiro lugar.',
             image: 'assets/images/vanguard-spoofer.jpg',
             prices: {
                 lifetime: '70.00'
             },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
         'biosecure-spoofer': {
             title: 'BioSecure Spoofer',
-            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
-            image: 'assets/images/vanguard-spoofer.jpg',
+            description: 'Um dos mais poderosos e versáteis do mercado. O BioSecure oferece uma solução robusta para banimentos de HWID em vários jogos, com um sistema de mascaramento de alto nível que garante sua proteção. Ideal para quem busca a máxima segurança e compatibilidade.',
+            image: 'assets/images/biosecure-spoofer.png',
             prices: {
                 lifetime: '100.00'
             },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
         'portable-spoofer': {
             title: 'Portable Spoofer',
-            description: 'A solução mais prática e rápida contra banimentos de HWID...',
+            description: 'A solução mais prática e rápida para reverter banimentos de HWID. O Portable Spoofer não requer instalação, sendo perfeito para uso em computadores múltiplos ou para quem precisa de uma ferramenta ágil. Bypass eficiente em poucos segundos.',
             image: 'assets/images/portable-spoofer.jpg',
             prices: {
                 lifetime: '90.00'
             },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
 
         // --- PRODUTOS DE LEAGUE OF LEGENDS ---
         'quartzo-script-lol': {
             title: 'Quartzo Script',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Eleve seu jogo com o Quartzo Script, uma ferramenta de alto nível para League of Legends. Desenvolvido para oferecer uma vantagem competitiva, este script completo é o seu parceiro ideal para dominar a Summoner\'s Rift, garantindo uma experiência de jogo superior e segura.',
             image: 'assets/images/quartzo-script-lol.jpg',
             prices: {
                 lifetime: '80.00'
             },
-            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'League of Legends', link: 'lol.html' }
         },
 
         // --- PRODUTOS DE VALORANT ---
         'orbitex-cheat-valorant': {
             title: 'Orbitex Cheat',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'O Orbitex Cheat é a introdução perfeita ao mundo competitivo de Valorant. Com um conjunto de recursos essenciais e fáceis de usar, ele oferece a vantagem que você precisa para subir de elo. É a ferramenta ideal para iniciantes que buscam uma experiência de jogo aprimorada e segura.',
             image: 'assets/images/orbitex-cheat-valorant.jpg',
             prices: {
                 lifetime: '60.00'
             },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
         'maxi-cheat-valorant': {
             title: 'Maxi Cheat',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Um equilíbrio perfeito entre performance e funcionalidade. O Maxi Cheat oferece um pacote de recursos intermediários para jogadores que já conhecem o básico e querem elevar seu nível. Com mais opções de personalização e otimização, ele é projetado para quem busca um desempenho sólido e confiável em qualquer partida.',
             image: 'assets/images/maxi-cheat-valorant.jpg',
             prices: {
                 lifetime: '80.00'
             },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
         'covert-cheat-valorant': {
             title: 'Covert Valorant',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'O auge da tecnologia em cheats para Valorant. O Covert é uma solução premium para jogadores que exigem o melhor em segurança e recursos avançados. Seu sistema altamente sofisticado oferece um desempenho inigualável, sendo a escolha de profissionais que buscam total discrição e a máxima vantagem competitiva.',
             image: 'assets/images/covert-cheat-valorant.jpg',
             prices: {
                 lifetime: '90.00'
             },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
 
         // --- PRODUTOS DE FORTNITE ---
         'external-cheat-fortnite': {
             title: 'External Cheat Fortnite',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Domine a ilha com o External Cheat para Fortnite. Nossa ferramenta oferece uma vantagem competitiva inigualável, projetada para aprimorar sua mira, consciência de jogo e performance geral, garantindo que você esteja sempre à frente dos seus adversários e pronto para a vitória.',
             image: 'assets/images/external-cheat-fortnite.jpg',
             prices: {
                 lifetime: '80.00'
             },
-            category: { name: 'Fortnite', link: 'fortnite.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'Fortnite', link: 'fortnite.html' }
         },
 
         // --- PRODUTOS DE OVERWATCH ---
         'sinfulexp-cheat-overwatch': {
             title: 'SinfulEXP Overwatch',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Transforme sua experiência em Overwatch com o SinfulEXP. Este cheat foi feito para te dar a vantagem decisiva em combate, melhorando seu posicionamento, mira e tomada de decisões em equipe. Eleve sua performance e alcance o topo do placar de forma discreta e segura.',
             image: 'assets/images/sinfulexp-cheat-overwatch.jpg',
             prices: {
                 lifetime: '80.00'
             },
-            category: { name: 'Overwatch', link: 'overwatch.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            category: { name: 'Overwatch', link: 'overwatch.html' }
         },
     };
 
