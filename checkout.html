@@ -15,7 +15,6 @@
 </head>
 
 <body class="checkout-page-body">
-
     <header class="header" id="header">
         <a href="index.html" class="logo-container">
             <div class="logo"><img src="assets/images/icon.png" alt="Logo" width="100%"></div>
@@ -28,43 +27,77 @@
             <a href="https://discord.gg/seuservidor" target="_blank" rel="noopener noreferrer"
                 class="menu-item external">Discord ↗</a>
         </nav>
-        <div class="menu-toggle" id="menuToggle">
-            <span></span><span></span><span></span>
-        </div>
+        <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
     </header>
 
     <main class="checkout-container">
-        <div class="breadcrumb fade-up-element" id="breadcrumbContainer"></div>
+        <div class="checkout-form-container">
+            <div class="payment-section fade-up-element">
+                <h2>Forma de pagamento</h2>
+                <div class="payment-method-selector">
+                    <label class="payment-option pix-option active">
+                        <input type="radio" name="payment-method" value="pix" checked>
+                        <img src="assets/images/pix-icon.png" alt="PIX Icon">
+                        <span>PIX</span>
+                    </label>
+                    <label class="payment-option stripe-option">
+                        <input type="radio" name="payment-method" value="stripe">
+                        <img src="assets/images/stripe-icon.png" alt="Stripe Icon">
+                        <span>Stripe</span>
+                    </label>
+                </div>
+            </div>
 
-        <div class="product-details fade-up-element">
-            <img id="productImage" src="" alt="Imagem do Produto" class="product-image-large">
-            <h1 id="productTitle">Nome do Produto</h1>
-            <p id="productDescription" class="product-description-text">
-                Descrição detalhada do produto, explicando seus benefícios, compatibilidade e como ele resolve o
-                problema do cliente.
-            </p>
+            <div class="contact-info-section fade-up-element">
+                <h2>Informações de contato</h2>
+                <div class="form-group">
+                    <div class="input-field">
+                        <label for="firstName">Nome</label>
+                        <input type="text" id="firstName" placeholder="Nome">
+                    </div>
+                    <div class="input-field">
+                        <label for="lastName">Sobrenome</label>
+                        <input type="text" id="lastName" placeholder="Sobrenome">
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <div class="input-field">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu-email@exemplo.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="terms-section fade-up-element">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="termsCheckbox">
+                    Eu aceito os <a href="#" class="terms-link">termos e condições</a> desta compra.
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+
+            <button id="payButton" class="pay-button fade-up-element" disabled>Pagar R$ 0,00</button>
         </div>
 
-        <div class="payment-details fade-up-element">
-            <h2>Escolha o Plano</h2>
-            <div class="plan-options" id="planOptionsContainer">
+        <div class="summary-container fade-up-element">
+            <h2>Resumo do Pedido</h2>
+            <div class="order-items" id="orderItemsContainer">
             </div>
 
-            <div class="price-display">
-                <span>Valor total:</span>
-                <strong id="productPrice">R$ 0,00</strong>
+            <div class="coupon-section">
+                <input type="text" id="couponInput" placeholder="Cupom">
+                <button id="applyCouponButton">Aplicar</button>
             </div>
 
-            <h2>Formas de Pagamento</h2>
-            <div class="payment-methods-container">
-                <a href="https://buy.stripe.com/test_dRm5kD0ESfkN4V73LabMQ00" class="payment-button stripe-button"
-                    data-payment-method="stripe">
-                    <img src="assets/images/stripe-icon.png" alt="Stripe" height="24">
-                </a>
-
-                <a href="#" class="payment-button pix-button" data-payment-method="pix">
-                    <img src="assets/images/pix-icon.png" alt="PIX" height="24">
-                </a>
+            <div class="order-summary-details">
+                <div class="summary-line subtotal">
+                    <span>Subtotal</span>
+                    <strong id="subtotalPrice">R$ 0,00</strong>
+                </div>
+                <div class="summary-line total">
+                    <span>Total</span>
+                    <strong id="totalPrice">R$ 0,00</strong>
+                </div>
             </div>
         </div>
     </main>
@@ -73,9 +106,7 @@
         <div class="footer-content">
             <div class="footer-about">
                 <a href="#home" class="logo-container">
-                    <div class="logo">
-                        <img src="assets/images/icon.png" alt="Logo Quartzo Store" width="100%">
-                    </div>
+                    <div class="logo"><img src="assets/images/icon.png" alt="Logo Quartzo Store" width="100%"></div>
                     <div class="logo-text">Quartzo Store</div>
                 </a>
                 <p class="footer-description">A vanguarda em soluções gamer para otimizar sua performance. Junte-se à
@@ -92,16 +123,13 @@
             <div class="footer-contact">
                 <h4 class="footer-title">Comunidade</h4>
                 <a href="https://discord.gg/seuservidor" class="footer-discord-button" target="_blank"
-                    rel="noopener noreferrer">
-                    Entrar no Discord
-                </a>
+                    rel="noopener noreferrer">Entrar no Discord</a>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2025 Quartzo Store. Todos os direitos reservados.</p>
         </div>
     </footer>
-
 
     <script src="assets/js/utils.js"></script>
     <script src="assets/js/checkout.js"></script>

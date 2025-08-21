@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finalizar Compra - Quartzo</title>
+    <link rel="icon" href="assets/images/icon.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/package.css" rel="stylesheet">
+</head>
+
+<body class="checkout-page-body">
+    <header class="header" id="header">
+        <a href="index.html" class="logo-container">
+            <div class="logo"><img src="assets/images/icon.png" alt="Logo" width="100%"></div>
+            <div class="logo-text">Quartzo</div>
+        </a>
+        <nav class="main-menu" id="mainMenu">
+            <a href="index.html#home" class="menu-item">Início</a>
+            <a href="index.html#products" class="menu-item">Produtos</a>
+            <a href="index.html#about" class="menu-item">Sobre</a>
+            <a href="https://discord.gg/seuservidor" target="_blank" rel="noopener noreferrer"
+                class="menu-item external">Discord ↗</a>
+        </nav>
+        <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+    </header>
+
+    <main class="checkout-container">
+        <div class="breadcrumb fade-up-element" id="breadcrumbContainer"></div>
+
+        <div class="product-details fade-up-element">
+            <img id="productImage" src="" alt="Imagem do Produto" class="product-image-large">
+            <h1 id="productTitle">Nome do Produto</h1>
+            <p id="productDescription" class="product-description-text">
+                Descrição detalhada do produto, explicando seus benefícios, compatibilidade e como ele resolve o
+                problema do cliente.
+            </p>
+        </div>
+
+        <div class="payment-details fade-up-element">
+            <h2>Escolha o Plano</h2>
+            <div class="plan-options" id="planOptionsContainer"></div>
+
+            <div class="price-display">
+                <span>Valor total:</span>
+                <strong id="productPrice">R$ 0,00</strong>
+            </div>
+
+            <h2>Forma de Pagamento</h2>
+
+            <a href="#" class="checkout-button" id="checkoutButton">Finalizar Compra</a>
+        </div>
+    </main>
+
+    <script src="assets/js/utils.js"></script>
+    <script src="assets/js/package.js"></script>
+</body>
+
+</html>

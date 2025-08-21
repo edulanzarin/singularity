@@ -1,95 +1,68 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Banco de dados simulado com informações dos produtos
+    // Banco de dados simulado (igual ao da página package.html)
     const productData = {
-        // --- PRODUTOS SPOOFER ---
         'vanguard-spoofer': {
             title: 'Vanguard Spoofer',
-            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
+            description: 'Spoofer 100% Anti-Vanguard...',
             image: 'assets/images/vanguard-spoofer.jpg',
-            prices: {
-                lifetime: '70.00'
-            },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            prices: { lifetime: '70.00' },
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
         'biosecure-spoofer': {
             title: 'BioSecure Spoofer',
-            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
+            description: 'Spoofer 100% Anti-Vanguard...',
             image: 'assets/images/vanguard-spoofer.jpg',
-            prices: {
-                lifetime: '100.00'
-            },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            prices: { lifetime: '100.00' },
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
         'portable-spoofer': {
             title: 'Portable Spoofer',
-            description: 'A solução mais prática e rápida contra banimentos de HWID...',
+            description: 'A solução mais prática e rápida...',
             image: 'assets/images/portable-spoofer.jpg',
-            prices: {
-                lifetime: '90.00'
-            },
-            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+            prices: { lifetime: '90.00' },
+            category: { name: 'Spoofer', link: 'spoofer.html' }
         },
-
-        // --- PRODUTOS DE LEAGUE OF LEGENDS ---
         'quartzo-script-lol': {
             title: 'Quartzo Script',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/quartzo-script-lol.jpg',
-            prices: {
-                lifetime: '80.00'
-            },
-            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '80.00' },
+            category: { name: 'League of Legends', link: 'lol.html' }
         },
-
-        // --- PRODUTOS DE VALORANT ---
         'orbitex-cheat-valorant': {
             title: 'Orbitex Cheat',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/orbitex-cheat-valorant.jpg',
-            prices: {
-                lifetime: '60.00'
-            },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '60.00' },
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
         'maxi-cheat-valorant': {
             title: 'Maxi Cheat',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/maxi-cheat-valorant.jpg',
-            prices: {
-                lifetime: '80.00'
-            },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '80.00' },
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
         'covert-cheat-valorant': {
             title: 'Covert Valorant',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/covert-cheat-valorant.jpg',
-            prices: {
-                lifetime: '90.00'
-            },
-            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '90.00' },
+            category: { name: 'Valorant', link: 'valorant.html' }
         },
-
-        // --- PRODUTOS DE FORTNITE ---
         'external-cheat-fortnite': {
             title: 'External Cheat Fortnite',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/external-cheat-fortnite.jpg',
-            prices: {
-                lifetime: '80.00'
-            },
-            category: { name: 'Fortnite', link: 'fortnite.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '80.00' },
+            category: { name: 'Fortnite', link: 'fortnite.html' }
         },
-
-        // --- PRODUTOS DE OVERWATCH ---
         'sinfulexp-cheat-overwatch': {
             title: 'SinfulEXP Overwatch',
-            description: 'Script completo com features avançadas para dominar o jogo...',
+            description: 'Script completo com features avançadas...',
             image: 'assets/images/sinfulexp-cheat-overwatch.jpg',
-            prices: {
-                lifetime: '80.00'
-            },
-            category: { name: 'Overwatch', link: 'overwatch.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+            prices: { lifetime: '80.00' },
+            category: { name: 'Overwatch', link: 'overwatch.html' }
         },
     };
 
@@ -102,71 +75,85 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const params = new URLSearchParams(window.location.search);
     const productId = params.get('product');
+    const planId = params.get('plan');
     const product = productData[productId];
 
-    if (product) {
-        // Atualiza o Breadcrumb dinamicamente
-        const breadcrumbContainer = document.getElementById('breadcrumbContainer');
-        if (breadcrumbContainer && product.category) {
-            breadcrumbContainer.innerHTML = `
-            <a href="index.html#products">Produtos</a>
-            <span>&gt;</span>
-            <a href="${product.category.link}">${product.category.name}</a>
-            <span>&gt;</span>
-            <h1>${product.title}</h1>
+    if (product && planId) {
+        // Obter os elementos do DOM
+        const orderItemsContainer = document.getElementById('orderItemsContainer');
+        const subtotalPriceElement = document.getElementById('subtotalPrice');
+        const totalPriceElement = document.getElementById('totalPrice');
+        const payButton = document.getElementById('payButton');
+        const termsCheckbox = document.getElementById('termsCheckbox');
+        const formFields = document.querySelectorAll('#firstName, #lastName, #email');
+        const paymentOptions = document.querySelectorAll('.payment-option');
+
+        // Adicionar o item do pedido ao resumo
+        const selectedPlan = planLabels[planId] || planId;
+        const price = parseFloat(product.prices[planId]).toFixed(2);
+
+        const orderItemHTML = `
+            <div class="order-item">
+                <img src="${product.image}" alt="${product.title}">
+                <div class="item-info">
+                    <h4>${product.title}</h4>
+                    <p>${selectedPlan} - ${product.category.name}</p>
+                </div>
+                <span class="item-price">R$ ${price}</span>
+            </div>
         `;
-        }
+        orderItemsContainer.innerHTML = orderItemHTML;
 
-        // Atualiza os dados fixos do produto (código que você já tem)
-        document.getElementById('productImage').src = product.image;
-        document.getElementById('productTitle').textContent = product.title;
-        document.getElementById('productDescription').textContent = product.description;
+        // Atualizar os preços
+        subtotalPriceElement.textContent = `R$ ${price}`;
+        totalPriceElement.textContent = `R$ ${price}`;
+        payButton.textContent = `Pagar R$ ${price}`;
 
-        const priceElement = document.getElementById('productPrice');
-        const planOptionsContainer = document.getElementById('planOptionsContainer');
+        // Lógica de validação do formulário
+        function validateForm() {
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const emailIsValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            const termsAccepted = termsCheckbox.checked;
 
-        // Limpa quaisquer opções que possam estar no HTML
-        planOptionsContainer.innerHTML = '';
-
-        // === A MÁGICA ACONTECE AQUI ===
-        // Cria dinamicamente as opções de plano baseadas nos preços do produto
-        Object.keys(product.prices).forEach((planKey, index) => {
-            const isChecked = index === 0 ? 'checked' : ''; // Marca o primeiro como padrão
-            const labelText = planLabels[planKey] || planKey; // Usa o texto legível ou a chave
-
-            const optionHTML = `
-                <label>
-                    <input type="radio" name="plan" value="${planKey}" ${isChecked}>
-                    <span>${labelText}</span>
-                </label>
-            `;
-            planOptionsContainer.insertAdjacentHTML('beforeend', optionHTML);
-        });
-
-        // Agora que as opções foram criadas, podemos selecioná-las
-        const planOptions = document.querySelectorAll('input[name="plan"]');
-
-        // Função para atualizar o preço na tela
-        function updatePrice() {
-            // Adicionamos uma verificação para o caso de haver apenas uma opção
-            const selectedPlanInput = document.querySelector('input[name="plan"]:checked');
-            if (selectedPlanInput) {
-                const selectedPlanValue = selectedPlanInput.value;
-                const newPrice = product.prices[selectedPlanValue];
-                priceElement.textContent = `R$ ${newPrice}`;
+            if (firstName && lastName && emailIsValid && termsAccepted) {
+                payButton.disabled = false;
+                // Remova esta linha para que o botão não "suma"
+                // payButton.classList.add('fade-up-element'); 
+            } else {
+                payButton.disabled = true;
+                // Remova esta linha para que o botão não "suma"
+                // payButton.classList.remove('fade-up-element');
             }
         }
 
-        // Adiciona o "ouvinte" para quando o usuário trocar de plano
-        planOptions.forEach(option => {
-            option.addEventListener('change', updatePrice);
+        // Adicionar listeners para os campos e checkbox
+        formFields.forEach(field => field.addEventListener('input', validateForm));
+        termsCheckbox.addEventListener('change', validateForm);
+
+        // Adicionar listener para a seleção de método de pagamento
+        paymentOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                paymentOptions.forEach(opt => opt.classList.remove('active'));
+                option.classList.add('active');
+            });
         });
 
-        // Atualiza o preço inicial assim que a página carrega
-        updatePrice();
+        // Adicionar listener para o botão de pagamento
+        payButton.addEventListener('click', () => {
+            if (!payButton.disabled) {
+                const selectedMethod = document.querySelector('.payment-option.active input').value;
+                alert(`Iniciando pagamento com ${selectedMethod} para ${product.title} (${selectedPlan}). Total: R$ ${price}`);
+                // Aqui você adicionaria a lógica real para iniciar o pagamento (Stripe, Pix, etc.)
+            }
+        });
 
     } else {
-        // Se o produto não for encontrado
-        document.querySelector('.checkout-container').innerHTML = '<h1 style="text-align: center; grid-column: 1 / -1;">Produto não encontrado!</h1>';
+        // Se o produto ou plano não for encontrado, redireciona para a página principal
+        document.querySelector('main').innerHTML = '<h1 style="text-align: center;">Produto ou plano não encontrado! Redirecionando...</h1>';
+        setTimeout(() => {
+            window.location.href = 'index.html#products';
+        }, 3000);
     }
 });
