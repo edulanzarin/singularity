@@ -288,7 +288,7 @@
 .coupon-section button {
     padding: 12px 20px;
     background-color: var(--accent-1);
-    color: var(--text-dark);
+    color: var(--bg-light);
     border: none;
     border-radius: 8px;
     font-weight: 700;
