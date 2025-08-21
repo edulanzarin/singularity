@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Banco de dados simulado com informações dos produtos
     const productData = {
         // --- PRODUTOS SPOOFER ---
-        'bioguard': {
+        'bioguard-spoofer': {
             title: 'BioGuard Spoofer',
             description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
             image: 'assets/images/bioguard-spoofer.jpg',
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
-        'portable': {
+        'portable-spoofer': {
             title: 'Portable Spoofer',
             description: 'A solução mais prática e rápida contra banimentos de HWID...',
             image: 'assets/images/portable-spoofer.jpg',
