@@ -1,31 +1,3 @@
-/* Importa a fonte Lexend Deca, se ainda não estiver em products-page.css */
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;600;700;800&display=swap');
-
-/* Certifique-se de que as variáveis de cor estão definidas */
-:root {
-    --bg-dark: #120D0B;
-    --bg-light: #2A1F1D;
-    --text-primary: #FFFFFF;
-    --text-secondary: #D1C7C2;
-    --border-color: rgba(255, 255, 255, 0.1);
-    --accent-1: #D90429;
-    --accent-2: #FF4800;
-    --accent-bright: #F77F00;
-    --accent-1-rgb: 217, 4, 41;
-}
-
-.product-page-body {
-    background: var(--bg-dark);
-    color: var(--text-primary);
-}
-
-.products-grid-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 120px 20px 60px;
-}
-
-/* ------------------- NOVA SEÇÃO DE SELEÇÃO DE CAMPEÕES ------------------- */
 .champion-selection-section {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(15px);
@@ -106,7 +78,6 @@
     /* Remove o fundo */
     border: none;
     /* Remove a borda */
-    cursor: pointer;
     padding: 0;
     /* Remove padding */
     color: var(--text-secondary);
@@ -124,7 +95,6 @@
     color: var(--text-secondary);
     padding: 12px 20px;
     border-radius: 8px;
-    cursor: pointer;
     font-size: 1rem;
     display: flex;
     align-items: center;
@@ -150,7 +120,7 @@
     gap: 15px;
     max-height: 250px;
     overflow-y: auto;
-    padding-right: 15px;
+    padding: 15px;
     scrollbar-width: thin;
     scrollbar-color: var(--accent-2) transparent;
 }
@@ -173,7 +143,6 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
-    cursor: pointer;
     transition: transform 0.2s ease;
     text-align: center;
     position: relative;
