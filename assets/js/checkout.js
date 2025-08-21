@@ -2,10 +2,19 @@ document.addEventListener('DOMContentLoaded', () => {
     // Banco de dados simulado com informações dos produtos
     const productData = {
         // --- PRODUTOS SPOOFER ---
-        'bioguard-spoofer': {
-            title: 'BioGuard Spoofer',
+        'vanguard-spoofer': {
+            title: 'Vanguard Spoofer',
             description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
-            image: 'assets/images/bioguard-spoofer.jpg',
+            image: 'assets/images/vanguard-spoofer.jpg',
+            prices: {
+                lifetime: '110.00'
+            },
+            category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
+        },
+        'biosecure-spoofer': {
+            title: 'BioSecure Spoofer',
+            description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
+            image: 'assets/images/vanguard-spoofer.jpg',
             prices: {
                 lifetime: '110.00'
             },
@@ -16,8 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'A solução mais prática e rápida contra banimentos de HWID...',
             image: 'assets/images/portable-spoofer.jpg',
             prices: {
-                monthly: '120.00',
-                lifetime: '250.00'
+                lifetime: '100.00'
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
