@@ -238,7 +238,6 @@
     border-radius: 12px;
     padding: 10px;
     transition: all 0.2s ease;
-    cursor: pointer;
 }
 
 .skin-card.selected {
@@ -337,7 +336,6 @@
     border-radius: 8px;
     font-size: 1.1rem;
     font-weight: 700;
-    cursor: pointer;
     transition: transform 0.2s ease;
     text-align: center;
 }
