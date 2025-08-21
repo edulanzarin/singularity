@@ -135,14 +135,36 @@ body::before {
 
 #home {
     justify-content: flex-start;
-    background: url('../images/background.jpg') no-repeat center center/cover;
+}
+
+.hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Faz o vídeo preencher todo o espaço sem distorcer */
+    z-index: -1;
+    /* Coloca o vídeo no fundo, atrás do conteúdo (hero-content) */
 }
 
 #home::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(18, 13, 11, 0.95) 20%, rgba(18, 13, 11, 0.2) 70%, transparent);
+    background: linear-gradient(to right,
+            rgba(18, 13, 11, 0.9) 30%,
+            /* Começa bem escuro */
+            rgba(18, 13, 11, 0.8) 50%,
+            /* Um pouco menos escuro */
+            rgba(18, 13, 11, 0.6) 70%,
+            /* Começa a clarear */
+            rgba(18, 13, 11, 0.2) 90%,
+            /* Bem transparente */
+            transparent 100%
+            /* Totalmente transparente no final */
+        );
     z-index: 1;
 }
 
@@ -363,16 +385,16 @@ body::before {
 
     /* A mágica da vinheta com gradiente radial */
     background: radial-gradient(ellipse at center,
-            transparent 40%,
+            transparent 50%,
             rgba(var(--accent-1-rgb)) 100%);
 
-    opacity: 0.3;
+    opacity: 0.2;
     transition: opacity 0.4s ease;
 }
 
 
 .product-card:hover .product-image::after {
-    opacity: 1;
+    opacity: 0.8;
 }
 
 .product-image img {
@@ -645,12 +667,40 @@ body::before {
     border-top: 1px solid var(--border-color);
 }
 
-.testimonial-author img {
+.testimonial-author .avatar-initials {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 2px solid var(--accent-1);
+    /* Para deixá-lo redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 18px;
+    /* Ajuste o tamanho da fonte se necessário */
+    color: var(--text-primary);
+    /* Texto das iniciais em branco */
+    border: 2px solid transparent;
+    /* Inicialmente transparente, a cor virá do background */
+    text-transform: uppercase;
+    /* Garante que as iniciais fiquem em maiúsculas */
+    background-color: transparent;
+    /* Valor inicial, será sobrescrito */
+}
+
+.testimonial-author .avatar-initials[data-gender="male"] {
+    background-color: rgba(68, 138, 255, 0.2);
+    /* Azul bem clarinho, quase um pastel */
+    border-color: rgba(68, 138, 255, 0.4);
+    /* Uma borda um pouco mais visível */
+}
+
+/* Cores para Gênero Feminino (rosa clarinho) */
+.testimonial-author .avatar-initials[data-gender="female"] {
+    background-color: rgba(255, 99, 132, 0.2);
+    /* Rosa bem clarinho */
+    border-color: rgba(255, 99, 132, 0.4);
+    /* Uma borda um pouco mais visível */
 }
 
 .author-name {

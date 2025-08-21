@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'bioguard': {
             title: 'BioGuard Spoofer',
             description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
-            image: 'assets/images/spoofer.jpg',
+            image: 'assets/images/bioguard-spoofer.jpg',
             prices: {
                 lifetime: '110.00'
             },
@@ -21,40 +21,68 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
+
         // --- PRODUTOS DE LEAGUE OF LEGENDS ---
-        'lol-obsydian': {
-            title: 'Obysidian League of Legends',
+        'quartzo-script-lol': {
+            title: 'Quartzo Script',
             description: 'Script completo com features avançadas para dominar o jogo...',
-            image: 'assets/images/lol-obsydian.jpg',
+            image: 'assets/images/quartzo-script-lol.jpg',
             prices: {
-                weekly: '35.00',
-                monthly: '85.00',
-                lifetime: '150.00'
+                lifetime: '80.00'
             },
             category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
         },
-        'lol-crash': {
-            title: 'Crash Ultimate PEN DRIVE',
-            description: 'Uma solução indetectável que roda diretamente do seu Pen Drive...',
-            image: 'assets/images/lol-crash.jpg',
+
+        // --- PRODUTOS DE VALORANT ---
+        'orbitex-cheat-valorant': {
+            title: 'Orbitex Cheat Valorant',
+            description: 'Script completo com features avançadas para dominar o jogo...',
+            image: 'assets/images/orbitex-cheat-valorant.jpg',
             prices: {
-                weekly: '70.00',
-                monthly: '110.00',
-                lifetime: '150.00'
+                lifetime: '60.00'
             },
-            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada
+            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
         },
-        'lol-engine': {
-            title: 'Engine Soul',
-            description: 'Ferramenta de alta performance para otimização de scripts...',
-            image: 'assets/images/lol-engine.jpg',
+        'maxi-cheat-valorant': {
+            title: 'Maxi Cheat Valorant',
+            description: 'Script completo com features avançadas para dominar o jogo...',
+            image: 'assets/images/maxi-cheat-valorant.jpg',
             prices: {
-                weekly: '15.00',
-                monthly: '45.00',
-                lifetime: '200.00'
+                lifetime: '80.00'
             },
-            category: { name: 'League of Legends', link: 'lol.html' } // Categoria adicionada
-        }
+            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+        },
+        'covert-cheat-valorant': {
+            title: 'Covert Valorant',
+            description: 'Script completo com features avançadas para dominar o jogo...',
+            image: 'assets/images/covert-cheat-valorant.jpg',
+            prices: {
+                lifetime: '90.00'
+            },
+            category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+        },
+
+        // --- PRODUTOS DE FORTNITE ---
+        'external-cheat-fortnite': {
+            title: 'External Cheat Fortnite',
+            description: 'Script completo com features avançadas para dominar o jogo...',
+            image: 'assets/images/external-cheat-fortnite.jpg',
+            prices: {
+                lifetime: '80.00'
+            },
+            category: { name: 'Fortnite', link: 'fortnite.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+        },
+
+        // --- PRODUTOS DE OVERWATCH ---
+        'sinfulexp-cheat-overwatch': {
+            title: 'SinfulEXP Overwatch',
+            description: 'Script completo com features avançadas para dominar o jogo...',
+            image: 'assets/images/sinfulexp-cheat-overwatch.jpg',
+            prices: {
+                lifetime: '80.00'
+            },
+            category: { name: 'Overwatch', link: 'overwatch.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
+        },
     };
 
     // Mapeamento de chaves para texto legível
