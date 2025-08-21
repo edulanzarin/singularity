@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
             image: 'assets/images/vanguard-spoofer.jpg',
             prices: {
-                lifetime: '110.00'
+                lifetime: '70.00'
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'Spoofer 100% Anti-Vanguard. Nosso sistema mais avançado garante bypass completo e indetectável do Riot Vanguard. Volte a jogar sem preocupações com proteção HWID definitiva. Segurança máxima e desempenho intacto.',
             image: 'assets/images/vanguard-spoofer.jpg',
             prices: {
-                lifetime: '110.00'
+                lifetime: '100.00'
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: 'A solução mais prática e rápida contra banimentos de HWID...',
             image: 'assets/images/portable-spoofer.jpg',
             prices: {
-                lifetime: '100.00'
+                lifetime: '90.00'
             },
             category: { name: 'Spoofer', link: 'spoofer.html' } // Categoria adicionada
         },
