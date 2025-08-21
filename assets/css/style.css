@@ -4,26 +4,28 @@
 /* 1. ESTILOS GLOBAIS E NOVA PALETA DE COR (INFERNO ESCARLATE) */
 :root {
     /* Cores de Fundo e Texto */
-    --bg-dark: #120D0B;
-    /* Um preto com fundo avermelhado, como rocha vulcânica */
-    --bg-light: #2A1F1D;
-    /* Um cinza-escuro quente */
-    --text-primary: #FFFFFF;
-    --text-secondary: #D1C7C2;
-    /* Um cinza claro levemente aquecido */
-    --border-color: rgba(255, 255, 255, 0.1);
+    --bg-dark: #0A0A0A;
+    /* Preto profundo para o fundo principal */
+    --bg-light: #1A1A1A;
+    /* Cinza-escuro para seções e cards */
+    --text-primary: #E0E0E0;
+    /* Cinza claro para texto principal, mais suave que branco puro */
+    --text-secondary: #8C8C8C;
+    /* Cinza médio para textos secundários ou menos importantes */
+    --border-color: rgba(69, 255, 127, 0.2);
+    /* Borda sutilmente esverdeada e transparente */
 
     /* Cores de Destaque (Acentos) */
-    --accent-1: #D90429;
-    /* Vermelho escarlate, o foco principal */
-    --accent-2: #FF4800;
-    /* Laranja vibrante, para gradientes e detalhes */
-    --accent-bright: #F77F00;
-    /* Laranja-amarelado, para pontos de maior brilho */
+    --accent-1: #45FF7F;
+    /* Verde fluorescente para destaque principal */
+    --accent-2: #24A148;
+    /* Um verde mais escuro e sólido para botões e links */
+    --accent-bright: #98FF98;
+    /* Um verde quase branco para brilhos e hover */
 
     /* Cores para Efeitos (ex: sombras) */
-    --accent-1-rgb: 217, 4, 41;
-    /* Componentes RGB do --accent-1 para usar com 'rgba' */
+    --accent-1-rgb: 69, 255, 127;
+    /* RGB do --accent-1 para usar com rgba */
 
     /* Cores de Terceiros (Branding) */
     --discord-blue: #5865F2;
