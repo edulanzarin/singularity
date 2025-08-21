@@ -138,51 +138,21 @@ const champions = [
 const lolAccounts = [
     {
         id: 'conta-lol-01',
-        title: 'Conta Platina - Vários Campeões e Skins',
+        title: 'Conta Platina - Várias Skins de Aatrox',
+        champion: 'Aatrox',
+        skins: ['Aatrox', 'Aatrox_2', 'Aatrox_3'],
         image: 'assets/images/placeholder-lol.jpg',
         originalPrice: '300.00',
-        currentPrice: '250.00',
-        champion: 'Aatrox'
+        currentPrice: '250.00'
     },
     {
         id: 'conta-lol-02',
         title: 'Conta Ouro - Main ADC (Jinx)',
+        champion: 'Jinx',
+        skins: ['Jinx_7', 'Jinx_10', 'Jinx_1'],
         image: 'assets/images/placeholder-lol-jinx.jpg',
         originalPrice: '200.00',
         currentPrice: '150.00',
-        champion: 'Jinx'
-    },
-    {
-        id: 'conta-lol-03',
-        title: 'Conta Diamante - Main Yasuo',
-        image: 'assets/images/placeholder-lol-yasuo.jpg',
-        originalPrice: '500.00',
-        currentPrice: '400.00',
-        champion: 'Yasuo'
-    },
-    {
-        id: 'conta-lol-04',
-        title: 'Conta Mestre - Main Mid (Ahri)',
-        image: 'assets/images/placeholder-lol-ahri.jpg',
-        originalPrice: '800.00',
-        currentPrice: '650.00',
-        champion: 'Ahri'
-    },
-    {
-        id: 'conta-lol-05',
-        title: 'Conta Prata - Main Sup (Thresh)',
-        image: 'assets/images/placeholder-lol.jpg',
-        originalPrice: '150.00',
-        currentPrice: '120.00',
-        champion: 'Thresh'
-    },
-    {
-        id: 'conta-lol-06',
-        title: 'Conta Bronze - Main Top (Garen)',
-        image: 'assets/images/placeholder-lol.jpg',
-        originalPrice: '100.00',
-        currentPrice: '80.00',
-        champion: 'Garen'
     }
 ];
 
@@ -190,6 +160,18 @@ const championListElement = document.getElementById('championList');
 const accountsGridElement = document.getElementById('accountsGrid');
 const championSearchInput = document.getElementById('championSearch');
 const gridTitleElement = document.getElementById('gridTitle');
+
+// Obtém a versão mais recente do Data Dragon dinamicamente
+async function getLatestVersion() {
+    try {
+        const response = await fetch('https://ddragon.leagueoflegends.com/api/versions.json');
+        const versions = await response.json();
+        return versions[0];
+    } catch (error) {
+        console.error('Erro ao buscar a versão da API:', error);
+        return '14.16.1'; // Versão padrão
+    }
+}
 
 let selectedChampion = null;
 
@@ -205,7 +187,7 @@ function renderChampions(filteredChampions) {
         img.classList.add('champion-icon');
         // A API da Riot para ícones de campeões é: http://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/ChampionId.png
         // (A versão '14.16.1' pode mudar, mas o formato é o mesmo)
-        img.src = `http://ddragon.leagueoflegends.com/cdn/14.16.1/img/champion/${champion.id}.png`;
+        img.src = `https://ddragon.leagueoflegends.com/cdn/54.16.1/img/champion/${champion.id}.png`;
         img.alt = champion.name;
 
         const name = document.createElement('span');
@@ -221,6 +203,59 @@ function renderChampions(filteredChampions) {
 
         championListElement.appendChild(championDiv);
     });
+}
+
+// Renderiza o carrossel de skins
+function renderSkins(championId, skins) {
+    const skinCarouselElement = document.getElementById('skinCarousel');
+    skinCarouselElement.innerHTML = ''; // Limpa o carrossel anterior
+
+    skins.forEach(skin => {
+        const skinDiv = document.createElement('div');
+        skinDiv.classList.add('skin-card');
+        skinDiv.setAttribute('data-skin-id', skin.num);
+
+        const img = document.createElement('img');
+        img.classList.add('skin-image');
+        img.src = `http://ddragon.leagueoflegends.com/cdn/img/champion/splash/${championId}_${skin.num}.jpg`;
+        img.alt = skin.name;
+
+        const name = document.createElement('span');
+        name.classList.add('skin-name');
+        name.textContent = skin.name;
+
+        skinDiv.appendChild(img);
+        skinDiv.appendChild(name);
+        skinCarouselElement.appendChild(skinDiv);
+
+        skinDiv.addEventListener('click', () => {
+            handleSkinSelection(skin.name, skin.num);
+        });
+    });
+
+    // Mostra a seção do carrossel de skins
+    document.getElementById('skinCarouselSection').style.display = 'block';
+}
+
+// Lida com a seleção de uma skin
+function handleSkinSelection(skinName, skinNum) {
+    document.querySelectorAll('.skin-card').forEach(card => card.classList.remove('selected'));
+    document.querySelector(`.skin-card[data-skin-id='${skinNum}']`).classList.add('selected');
+
+    gridTitleElement.textContent = `Contas com a Skin ${skinName}`;
+    filterAndRenderAccountsBySkin(skinName);
+}
+
+// Filtra as contas com base na skin selecionada
+function filterAndRenderAccountsBySkin(skinName) {
+    const filteredAccounts = lolAccounts.filter(account => {
+        // Encontre a skin ID (número) correspondente ao nome da skin
+        // Esta parte pode ser complexa. O ideal é que a sua base de dados já tenha o ID da skin.
+        // Por exemplo, se a sua conta tem a skin 'Ahri_4', você deve filtrar por ela.
+        // Para simplificar, vamos usar o nome da skin para filtrar as contas.
+        return account.skins.some(s => s.toLowerCase() === skinName.toLowerCase());
+    });
+    renderAccounts(filteredAccounts);
 }
 
 // Função para renderizar os cards de contas
@@ -252,21 +287,38 @@ function renderAccounts(accounts) {
     });
 }
 
-// Função para lidar com a seleção do campeão
-function handleChampionSelection(championName) {
-    // Remove a classe 'selected' de todos os ícones
+// Atualize esta função para buscar as skins do campeão
+async function handleChampionSelection(championName) {
     document.querySelectorAll('.champion-icon-container').forEach(icon => {
         icon.classList.remove('selected');
     });
 
-    const selectedIcon = document.querySelector(`.champion-icon-container[data-champion-id='${championName.replace(/\s/g, '')}']`);
+    const championId = champions.find(c => c.name === championName).id;
+    const selectedIcon = document.querySelector(`.champion-icon-container[data-champion-id='${championId}']`);
     if (selectedIcon) {
         selectedIcon.classList.add('selected');
     }
 
     selectedChampion = championName;
-    gridTitleElement.textContent = `Contas com Skin Grátis de ${championName}`;
-    filterAndRenderAccounts();
+
+    // Esconde as contas antigas e mostra o carrossel de skins
+    document.getElementById('accountsGrid').innerHTML = '';
+    document.getElementById('gridTitle').textContent = `Selecione uma Skin de ${championName}`;
+    document.getElementById('skinCarouselSection').style.display = 'block';
+
+    // Chama a API para buscar os dados do campeão e suas skins
+    const latestVersion = await getLatestVersion();
+    const url = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/data/pt_BR/champion/${championId}.json`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const championData = data.data[championId];
+        renderSkins(championId, championData.skins);
+    } catch (error) {
+        console.error('Erro ao buscar skins:', error);
+        document.getElementById('skinCarousel').innerHTML = '<p class="no-results-message">Não foi possível carregar as skins.</p>';
+    }
 }
 
 // Função para filtrar as contas com base no campeão selecionado
@@ -286,8 +338,8 @@ championSearchInput.addEventListener('input', (e) => {
 });
 
 // Inicialização
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     renderChampions(champions);
-    // Renderiza todas as contas inicialmente
-    renderAccounts(lolAccounts);
+    // Inicialmente, não mostre nenhuma conta
+    renderAccounts([]);
 });

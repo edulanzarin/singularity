@@ -65,6 +65,7 @@
 
 .search-box {
     position: relative;
+    /* Adicione isso */
     width: 100%;
     max-width: 400px;
 }
@@ -75,10 +76,12 @@
     border: 1px solid var(--border-color);
     border-radius: 8px;
     color: var(--text-primary);
-    padding: 12px 15px;
+    padding: 12px 45px 12px 15px;
+    /* Aumente o padding à direita para dar espaço à lupa */
     font-size: 1rem;
     outline: none;
     transition: all 0.3s ease;
+    height: 50px;
 }
 
 .search-box input:focus {
@@ -88,6 +91,31 @@
 
 .search-box input::placeholder {
     color: var(--text-secondary);
+}
+
+.search-button {
+    position: absolute;
+    /* Adicione isso */
+    right: 15px;
+    /* Ajuste para o espaçamento à direita */
+    top: 50%;
+    /* Alinha verticalmente */
+    transform: translateY(-50%);
+    /* Centraliza verticalmente */
+    background: transparent;
+    /* Remove o fundo */
+    border: none;
+    /* Remove a borda */
+    cursor: pointer;
+    padding: 0;
+    /* Remove padding */
+    color: var(--text-secondary);
+    transition: color 0.2s ease;
+}
+
+.search-button:hover {
+    color: var(--accent-1);
+    /* Mude a cor no hover */
 }
 
 .filter-button {
@@ -102,6 +130,7 @@
     align-items: center;
     gap: 8px;
     transition: all 0.2s ease;
+    height: 50px;
 }
 
 .filter-button:hover {
