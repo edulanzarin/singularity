@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- PRODUTOS DE VALORANT ---
         'orbitex-cheat-valorant': {
-            title: 'Orbitex Cheat Valorant',
+            title: 'Orbitex Cheat',
             description: 'Script completo com features avançadas para dominar o jogo...',
             image: 'assets/images/orbitex-cheat-valorant.jpg',
             prices: {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             category: { name: 'Valorant', link: 'valorant.html' } // Categoria adicionada (assumindo que você tem ou terá uma página lol.html)
         },
         'maxi-cheat-valorant': {
-            title: 'Maxi Cheat Valorant',
+            title: 'Maxi Cheat',
             description: 'Script completo com features avançadas para dominar o jogo...',
             image: 'assets/images/maxi-cheat-valorant.jpg',
             prices: {
