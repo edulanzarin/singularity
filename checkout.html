@@ -56,16 +56,16 @@
             </div>
 
             <h2>Forma de Pagamento</h2>
-            <div class="payment-method">
-                <div class="pix-option">
-                    <img src="assets/images/pix-icon.png" alt="PIX" height="24">
-                    <span>PIX (QR Code gerado após a compra)</span>
-                </div>
-            </div>
+            <div class="payment-methods-container">
+                <a href="https://buy.stripe.com/test_dRm5kD0ESfkN4V73LabMQ00" class="payment-button stripe-button"
+                    data-payment-method="stripe">
+                    <img src="assets/images/stripe-icon.png" alt="Stripe" height="24">
+                </a>
 
-            <a href="#" class="checkout-button">
-                Finalizar Compra
-            </a>
+                <a href="#" class="payment-button pix-button" data-payment-method="pix">
+                    <img src="assets/images/pix-icon.png" alt="PIX" height="24">
+                </a>
+            </div>
         </div>
     </main>
 
