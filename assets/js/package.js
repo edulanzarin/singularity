@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'quartzo-script-lol': {
             title: 'Quartzo Script',
             description: 'Eleve seu jogo com o Quartzo Script, uma ferramenta de alto nível para League of Legends. Desenvolvido para oferecer uma vantagem competitiva, este script completo é o seu parceiro ideal para dominar a Summoner\'s Rift, garantindo uma experiência de jogo superior e segura.',
-            image: 'assets/images/quartzo-script-lol.jpg',
+            image: 'assets/images/quartzo-script-lol.png',
             prices: {
                 lifetime: '80.00'
             },

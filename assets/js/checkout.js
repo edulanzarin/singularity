@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'quartzo-script-lol': {
             title: 'Quartzo Script',
             description: 'Script completo com features avançadas...',
-            image: 'assets/images/quartzo-script-lol.jpg',
+            image: 'assets/images/quartzo-script-lol.png',
             prices: { lifetime: '80.00' },
             category: { name: 'League of Legends', link: 'lol.html' }
         },
